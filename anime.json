@@ -1,0 +1,448 @@
+[
+    {
+        "id": 1,
+        "title": "Solo Leveling",
+        "image":"https://i.pinimg.com/474x/79/36/da/7936dae2f934776f2e8e8f580be98317.jpg", 
+        "genre":"Action",
+        "seasons":2,
+        "episodes":25,
+        "year":2023,
+        "description":"Sung Jin-Woo starts as the weakest of them all. But when a mysterious power awakens within him, he begins a journey to become the strongest hunter alive  As he rises from the bottom, Jin-Woo unlocks terrifying powers, commands an army of shadows, and becomes a force greater than even the strongest hunters and monsters."
+    },
+    {
+        "id": 2,
+        "title": "Demon Slayer",
+        "image":"https://wallpapers.com/images/hd/demon-slayer-ipad-o6cno2ditosjgcak.jpg", 
+        "genre":"Action",
+        "seasons":6,
+        "episodes":64,
+        "year":2019,
+        "description":"A boy becomes a demon slayer after his family is slaughtered."
+    },
+    {
+        "id": 3,
+        "title": "One Piece",
+        "image":"https://i.pinimg.com/736x/ef/6f/0f/ef6f0f1f1ff9a5a86232855f2877efac.jpg", 
+        "genre":"Action,Treasure",
+        "seasons":5,
+        "episodes":286,
+        "year":2022,
+        "description":"The story follows Monkey D. Luffy, a young man who gains the properties of rubber after unintentionally eating a Devil Fruit, and his adventures with the Straw Hat Pirates"
+    },
+    {
+        "id": 4,
+        "title": "Naruto",
+        "image":"https://w0.peakpx.com/wallpaper/1021/130/HD-wallpaper-naruto-anime-kakashi-sakura-sasuke-shonen.jpg", 
+        "genre":"Action,War",
+        "seasons":9,
+        "episodes":220,
+        "year":2002,
+        "description":"A young ninja who dreams of becoming the Hokage, the leader of his village, Konohagakure"
+    },
+    {
+        "id": 5,
+        "title": "Dan Da Dan",
+        "image":"https://i.pinimg.com/736x/ee/1d/4f/ee1d4f1be2c235032be0c4587c5f4c16.jpg", 
+        "genre":"Comedy, Horror, Action",
+        "seasons":2,
+        "episodes":12,
+        "year":2024,
+        "description":"Momo Ayase and Ken Takakura , who believe in opposing supernatural forces"
+    },
+    {
+        "id": 6,
+        "title": "Dr.Stone",
+        "image":"https://w0.peakpx.com/wallpaper/84/527/HD-wallpaper-dr-stone-anime-iphone-red-samsung-senku.jpg", 
+        "genre":"Scifi, Adventure,Action",
+        "seasons":5,
+        "episodes":27,
+        "year":2024,
+        "description":"a scientific genius named Senku Ishigami awakens in a world where humanity has been petrified by a mysterious light. "
+    },
+    {
+        "id": 7,
+        "title": "New Saga",
+        "image":"https://m.media-amazon.com/images/M/MV5BMGI0NzU4Y2UtYzQwNS00YzdhLTk4YjctYmM5NTZmMDRlM2JiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", 
+        "genre":"Magic, Action",
+        "seasons":1,
+        "episodes":2,
+        "year":2025,
+        "description":"a magic swordsman named Kyle defeats the Demon King, but is then sent back in time to before the Great Invasion by a mysterious crimson crystal "
+    },
+    {
+        "id": 8,
+        "title": "Tokyo Revengers",
+        "image":"https://w0.peakpx.com/wallpaper/489/641/HD-wallpaper-tokyo-revengers-wp-anime-anime-valhalla-tokyo-revengers-takemichi-hanagaki-manjiro-sano-takemichi-toman-tokyo-revengers-mikey.jpg",
+        "seasons":3,
+        "episodes":74,
+        "year":2021,
+        "description":"Takemichi Hanagaki, a part-time worker who discovers he can time travel to his middle school days "
+    },
+    
+  {
+    "id": 9,
+    "title": "Black Clover | Subtitled",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcJSfB7RetRISlRcRdxhgqLVYIaH4rjFuipQ&s",
+    "genre": "Action, Fantasy",
+    "seasons": 4,
+    "episodes": 170,
+    "year": 2017,
+    "description": "Asta and Yuno are determined to become the Wizard King in a world of magic, even though Asta has none."
+  },
+  {
+    "id": 10,
+    "title": "Black Butler | Subtitled",
+    "image": "https://m.media-amazon.com/images/I/81H3COSBQ5L.jpg",
+    "genre": "Horror, Dark Fantasy, Supernatural",
+    "seasons": 3,
+    "episodes": 46,
+    "year": 2008,
+    "description": "Ciel Phantomhive, with his demon butler Sebastian, solves mysteries in Victorian England."
+  },
+  {
+    "id": 11,
+    "title": "Death Note | Subtitled",
+    "image": "https://static.posters.cz/image/750/death-note-from-the-shadows-i58005.jpg",
+    "genre": "Psychological, Horror, Thriller",
+    "seasons": 1,
+    "episodes": 37,
+    "year": 2006,
+    "description": "Light Yagami finds a notebook that can kill anyone and begins a moral battle with the genius detective L."
+  },
+  {
+    "id": 12,
+    "title": "Dragon Ball Super | Subtitled",
+    "image": "https://m.media-amazon.com/images/I/81Z-WeVM-sS.jpg",
+    "genre": "Martial Arts, Sci-Fi",
+    "seasons": 3,
+    "episodes": 180,
+    "year": 1989,
+    "description": "Goku and his friends defend Earth from powerful villains while constantly surpassing their limits."
+  },
+  {
+    "id": 13,
+    "title": "Jujutsu Kaisen | Subtitled",
+    "image": "https://i.pinimg.com/736x/ac/43/52/ac4352f877cd4265d69538bd7532b7b3.jpg",
+    "genre": "Action, Supernatural",
+    "seasons": 2,
+    "episodes": 47,
+    "year": 2020,
+    "description": "Yuji Itadori joins a secret organization to fight curses after eating a powerful cursed object."
+  },
+  {
+    "id": 14,
+    "title": "Haikyu!! | Subtitled",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpe7ohW4xzDyg3D-sOpgq9Vu_nRqqEYCOcvw&s",
+    "genre": "Sports, Drama",
+    "seasons": 4,
+    "episodes": 85,
+    "year": 2014,
+    "description": "Shoyo Hinata, a passionate short volleyball player, aims to become the best despite his height."
+  },
+  {
+    "id": 15,
+    "title": "Wind Breaker | Subtitled",
+    "image": "https://i.pinimg.com/736x/b5/c8/17/b5c817f77fac5fdea158d190da7fbbc1.jpg",
+    "genre": "Action, Delinquent",
+    "seasons": 1,
+    "episodes": 13,
+    "year": 2024,
+    "description": "Haruka Sakura joins Furin High to fight strong opponents and protect the weak with his fists."
+  },
+  {
+    "id": 16,
+    "title": "Gachiakuta | Subtitled",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScw4QWeCsEqIjt312Y3UrzePEFaANRUcAvlg&s",
+    "genre": "Action, Dystopian",
+    "seasons": 1,
+    "episodes": 12,
+    "year": 2024,
+    "description": "Rudo is thrown into a trash-filled underworld and must fight using special weapons to survive."
+  },
+  {
+    "id": 17,
+    "title": "Bleach | Subtitled",
+    "image": "https://i.pinimg.com/736x/8b/3e/9c/8b3e9c7953d6cdc568b288bdf25b4f10.jpg",
+    "genre": "Action, Supernatural",
+    "seasons": 17,
+    "episodes": 390,
+    "year": 2004,
+    "description": "Ichigo Kurosaki becomes a Soul Reaper and protects the living world from evil spirits called Hollows."
+  },
+  {
+    "id": 18,
+    "title": "The Shiunji Family Children | Subtitled",
+    "image": "https://a.storyblok.com/f/178900/1280x1809/86e02165a2/the-shiunji-family-children-teaser-visual.jpg/m/filters:quality(95)format(webp)",
+    "genre": "Romance, Comedy",
+    "seasons": 1,
+    "episodes": 12,
+    "year": 2024,
+    "description": "A boy lives with five beautiful adopted sisters, creating a mix of awkward, funny, and emotional moments."
+  },
+  {
+    "id": 19,
+    "title": "The Daily Life of the Immortal King | Subtitled",
+    "image": "https://m.media-amazon.com/images/M/MV5BODUwZGFlOTQtMWVjOS00N2Q2LWJmOGItOWM1NmQ4ODY2NTZiXkEyXkFqcGc@._V1_.jpg",
+    "genre": "Comedy, Fantasy",
+    "seasons": 3,
+    "episodes": 39,
+    "year": 2020,
+    "description": "Wang Ling is an OP high school student trying to hide his powers and live a normal school life."
+  },
+
+  {
+    "id": 20,
+    "title": "My Hero Academia Dub| Sub",
+    "image": "https://i.pinimg.com/736x/1b/93/49/1b934928aea8257e00f2cf6bee855aee.jpg",
+    "genre": "Action, Comedy, Superpower",
+    "seasons": 8,
+    "episodes": 169,
+    "year": 2016,
+    "description": "a boy born without superpowers  in a world where most people have them. Despite this, he dreams of becoming a hero, and after meeting the world's greatest hero, All Might"
+  },
+  {
+  "id": 21,
+  "title": "Attack on Titan Dub|Sub",
+  "image": "https://i.pinimg.com/474x/96/50/ff/9650ff654f66241448b9733f4a12dc85.jpg",
+  "genre": "Action, Drama, Mystery",
+  "seasons": 4,
+  "episodes": 87,
+  "year": 2013,
+  "description": "In a world under siege by giant humanoid Titans, Eren Yeager joins the Scout Regiment to uncover the truth and take revenge after his city is destroyed."
+},
+{
+  "id": 22,
+  "title": "Hunter x Hunter Dub|Sub",
+  "image": "https://images-cdn.ubuy.co.in/6353ac79771f1e13e575aa04-trends-international-x-hunter-book-key.jpg",
+  "genre": "Adventure, Fantasy, Shounen",
+  "seasons": 6,
+  "episodes": 148,
+  "year": 2011,
+  "description": "Young Gon Freecss becomes a Hunter to search for his missing father and faces dangerous trials while forming powerful friendships along the way."
+},
+{
+  "id": 23,
+  "title": "One Punch Man Dub|Sub",
+  "image": "https://images-cdn.ubuy.co.in/6749d637c53fd406cc3bb54c-one-punch-man-destruction-maxi-poster.jpg",
+  "genre": "Action, Comedy, Superhero",
+  "seasons": 2,
+  "episodes": 24,
+  "year": 2015,
+  "description": "Saitama, a hero who can defeat any opponent with a single punch, grows bored and seeks a worthy challenge in a world full of monsters and heroes."
+},
+{
+  "id": 24,
+  "title": "Blue Lock Dub|Sub",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfXbiXggYGMMZctkfZ9r7zgE0PspF2O9gzA&s",
+  "genre": "Sports, Thriller, Psychological",
+  "seasons": 1,
+  "episodes": 24,
+  "year": 2022,
+  "description": "Japan's football union starts a controversial training camp to create the best striker in the world through an intense survival program known as Blue Lock."
+},
+{
+  "id": 25,
+  "title": "Baki Dub|Sub",
+  "image": "https://images.justwatch.com/poster/306783512/s718/season-2.jpg",
+  "genre": "Martial Arts, Action, Seinen",
+  "seasons": 3,
+  "episodes": 39,
+  "year": 2018,
+  "description": "Baki Hanma trains endlessly to surpass his powerful father, Yujiro, and takes on brutal underground fights against the world’s deadliest warriors."
+},
+{
+  "id": 26,
+  "title": "Hajime no Ippo Dub|Sub",
+  "image": "https://i.pinimg.com/736x/ea/e0/cf/eae0cfb8d0872e5199443cc5a88be73a.jpg",
+  "genre": "Sports, Drama, Comedy",
+  "seasons": 3,
+  "episodes": 127,
+  "year": 2000,
+  "description": "A shy high schooler named Ippo discovers boxing as a way to gain confidence, pushing through intense training and emotional battles to rise in the ring."
+},
+{
+  "id": 27,
+  "title": "Slam Dunk Dub|Sub",
+  "image": "https://i.pinimg.com/736x/6c/b0/97/6cb097f36fb8438fca2a5ad3c456687c.jpg",
+  "genre": "Sports, Comedy, School",
+  "seasons": 1,
+  "episodes": 101,
+  "year": 1993,
+  "description": "Delinquent Hanamichi Sakuragi joins his school’s basketball team to impress a girl but ends up falling in love with the game and chasing greatness."
+},
+{
+  "id": 28,
+  "title": "MF Ghost Dub|Sub",
+  "image": "https://i.redd.it/mf-ghost-phone-wallpapers-from-the-official-website-v0-ans8md37rapc1.png?width=1625&format=png&auto=webp&s=66a9162948c5c265d0f9de565b010aac217561fe",
+  "genre": "Racing, Drama, Sci-Fi",
+  "seasons": 1,
+  "episodes": 12,
+  "year": 2023,
+  "description": "In a future Japan where self-driving cars dominate, Kanata Rivington returns from England to compete in street racing and uncover secrets about his father."
+},
+{
+  "id": 29,
+  "title": "God's Game We Play Dub|Sub",
+  "image": "https://m.media-amazon.com/images/M/MV5BNjc4NGQxY2ItZTE2NC00M2U4LTk4OTUtZTcxNjVlMDVjZDk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "genre": "Fantasy, Strategy, Game",
+  "seasons": 1,
+  "episodes": 12,
+  "year": 2024,
+  "description": "Fay joins a mysterious girl named Leshea in divine games created by gods, where logic, wit, and teamwork decide the fate of worlds."
+},
+{
+  "id": 30,
+  "title": "The Promised Neverland Dub|Sub",
+  "image": "https://i.pinimg.com/736x/93/54/e7/9354e75ebdf6821b00a64d70fe9f8d0c.jpg",
+  "genre": "Thriller, Mystery, Horror, Sci-Fi",
+  "seasons": 2,
+  "episodes": 23,
+  "year": 2019,
+  "description": "Emma, Norman, and Ray uncover the dark secrets of their orphanage and plan a daring escape to save themselves and the other children from a grim fate."
+},
+
+{
+  "id": 31,
+  "title": "Megalo Box Dub|Sub",
+  "image": "https://i.pinimg.com/736x/cd/ea/09/cdea09a54c643fc5ecac0d5d996ee3ee.jpg",
+  "genre": "Action, Sports, Drama",
+  "seasons": 2,
+  "episodes": 26,
+  "year": 2018,
+  "description": "In a futuristic society where gear-enhanced boxing is king, a mysterious underdog named Joe rises from the slums to challenge the champion in the ultimate Megalo Box tournament."
+},
+{
+  "id": 32,
+  "title": "Chainsaw Man Dub|Sub",
+  "image": "https://images-cdn.ubuy.co.in/6572ec2c2677ae300910432a-cinemaflix-chainsaw-man-japanese-anime.jpg",
+  "genre": "Action, Horror, Supernatural",
+  "seasons": 1,
+  "episodes": 12,
+  "year": 2022,
+  "description": "Denji, a debt-ridden devil hunter, merges with his pet devil Pochita and becomes Chainsaw Man. Pulled into the Public Safety Bureau, he battles devils while chasing simple dreams and facing brutal truths."
+},
+
+{
+  "id": 33,
+  "title": "Dragon Ball Z Dub|Sub",
+  "image": "https://imgc.allpostersimages.com/img/posters/dragon-ball-z-saiyans_u-L-FAENZV0.jpg",
+  "genre": "Action, Adventure, Martial Arts",
+  "seasons": 9,
+  "episodes": 291,
+  "year": 1989,
+  "description": "Goku defends Earth from powerful foes like Vegeta, Frieza, Cell, and Majin Buu while training to become the strongest fighter in the universe."
+},
+{
+  "id": 34,
+  "title": "The Rising of the Shield Hero Dub|Sub",
+  "image": "https://images.justwatch.com/poster/241519432/s166/the-rising-of-the-shield-hero",
+  "genre": "Adventure, Magic",
+  "seasons": 4,
+  "episodes": 51,
+  "year": 2019,
+  "description": "Naofumi Iwatani, a gamer, is summoned to a parallel world along with three other heroes to fight against interdimensional monsters called Waves."
+},
+{
+  "id": 35,
+  "title": "Kaiju No. 8 Sub",
+  "image": "https://4kwallpapers.com/images/wallpapers/kaiju-no-8-poster-5k-5120x7236-19046.jpg",
+  "genre": "Action, Sci-Fi",
+  "seasons": 1,
+  "episodes": 12,
+  "year": 2024,
+  "description": "Kafka Hibino gains the power to transform into a kaiju while fighting monsters threatening humanity."
+},
+{
+  "id": 36,
+  "title": "Oshi no Ko Sub|Dub",
+  "image": "https://m.media-amazon.com/images/M/MV5BYzM3ZGJkN2YtOTQ5Ny00MzEyLTlkMzQtZDVhYzM3YWFlM2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "genre": "Drama, Supernatural",
+  "seasons": 2,
+  "episodes": 24,
+  "year": 2023,
+  "description": "Reincarnated as the children of an idol, twins uncover the dark secrets of the entertainment world."
+},
+{
+  "id": 37,
+  "title": "Frieren: Beyond Journey's End Sub",
+  "image": "https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+  "genre": "Fantasy, Drama",
+  "seasons": 1,
+  "episodes": 28,
+  "year": 2023,
+  "description": "An elf mage continues her journey long after defeating the Demon King, reflecting on mortality and bonds."
+},
+{
+  "id": 38,
+  "title": "Mashle: Magic and Muscles Sub",
+  "image": "https://wallpapercg.com/media/ts_orig/20968.webp",
+  "genre": "Fantasy, Comedy",
+  "seasons": 2,
+  "episodes": 24,
+  "year": 2023,
+  "description": "In a magic-dominated world, Mash uses pure muscle strength to fight his way through a magical academy."
+},
+{
+  "id": 39,
+  "title": "Zom 100: Bucket List of the Dead Sub",
+  "image": "https://www.cnet.com/a/img/resize/123bcd4b162f47cb6978cb028364770da7d3d16a/hub/2023/07/07/50bca37c-159c-4055-8f02-291d3bba2df7/zom-100.jpg?auto=webp&fit=crop&height=1200&width=1200",
+  "genre": "Comedy, Horror",
+  "seasons": 1,
+  "episodes": 12,
+  "year": 2023,
+  "description": "Akira finally feels free after a zombie apocalypse begins, determined to live life fully before dying."
+},
+{
+  "id": 40,
+  "title": "Hell's Paradise Sub",
+  "image": "https://resizing.flixster.com/5_1YujrM61psVrT88QxQIRDxVf4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNmVkZWRiMmYtZjNhMS00NGMyLWI2NDAtYmNlMzU2MGFiMGMwLnBuZw==",
+  "genre": "Action, Dark Fantasy",
+  "seasons": 1,
+  "episodes": 13,
+  "year": 2023,
+  "description": "Condemned criminals explore a mysterious island filled with horrors in search of the Elixir of Life."
+},
+{
+  "id": 41,
+  "title": "Spy x Family Sub|Dub",
+  "image": "https://m.media-amazon.com/images/I/81uAmocNBtL.jpg",
+  "genre": "Comedy, Action",
+  "seasons": 2,
+  "episodes": 38,
+  "year": 2022,
+  "description": "A spy, an assassin, and a telepath child form a fake family while hiding their true identities."
+},
+{
+  "id": 42,
+  "title": "Jobless Reincarnation: Mushoku Tensei Sub|Dub",
+  "image": "https://cdn.hmv.com/r/w-640/hmv/files/02/02b4caf0-6bf5-4a41-be07-7c9448ab1f63.jpg",
+  "genre": "Isekai, Fantasy",
+  "seasons": 2,
+  "episodes": 47,
+  "year": 2021,
+  "description": "A man reincarnates into a fantasy world with great magical talent, seeking redemption in a new life."
+},
+{
+  "id": 43,
+  "title": "To Your Eternity Sub|Dub",
+  "image": "https://m.media-amazon.com/images/M/MV5BMzZhYzAzODUtMzYxMi00OWE1LWI4ZTQtYzU4ZjgxZjcxODA3XkEyXkFqcGc@._V1_.jpg",
+  "genre": "Drama, Fantasy",
+  "seasons": 2,
+  "episodes": 40,
+  "year": 2021,
+  "description": "An immortal being takes different forms to experience humanity, love, and loss across time."
+},
+{
+  "id": 44,
+  "title": "Tokyo Ghoul Sub|Dub",
+  "image": "https://i.pinimg.com/736x/bb/d5/9b/bbd59b6cbfb0d1a2a1b64da1accd76a8.jpg",
+  "genre": "Dark Fantasy, Horror",
+  "seasons": 4,
+  "episodes": 60,
+  "year": 2014,
+  "description": "Kaneki becomes half-ghoul and struggles to survive between the human and ghoul worlds."
+}
+
+]
+
+    

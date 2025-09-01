@@ -1,0 +1,812 @@
+[
+  {
+    "id": 1,
+    "title": "Solo Leveling",
+    "image": "https://i.pinimg.com/474x/79/36/da/7936dae2f934776f2e8e8f580be98317.jpg",
+    "genre": ["Action"],
+    "seasons": [
+      { "season": 1, "episodes": 12 },
+      { "season": 2, "episodes": 13 }
+    ],
+    "year": 2023,
+    "status": "Completed",
+    "day": "Monday",
+    "seasonName": "Winter",
+    "language": ["Sub", "Dub"],
+    "popularity": 95,
+    
+    "description": "Sung Jin-Woo, once the weakest hunter, awakens a hidden power and begins to rise as a shadow monarch."
+  },
+  {
+    "id": 2,
+    "title": "Demon Slayer",
+    "image": "https://wallpapers.com/images/hd/demon-slayer-ipad-o6cno2ditosjgcak.jpg",
+    "genre": ["Action"],
+    "seasons": [
+      { "season": 1, "episodes": 26 },
+      { "season": 2, "episodes": 18 },
+      { "season": 3, "episodes": 11 },
+      { "season": 4, "episodes": 8 }
+    ],
+    "year": 2019,
+    "status": "Ongoing",
+    "day": "Sunday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 95,
+   
+    "description": "Tanjiro becomes a demon slayer after his family is killed, to save his demon-turned sister."
+  },
+  {
+    "id": 3,
+    "title": "One Piece",
+    "image": "https://i.pinimg.com/736x/ef/6f/0f/ef6f0f1f1ff9a5a86232855f2877efac.jpg",
+    "genre": ["Adventure"],
+    "seasons": [
+      { "season": 1, "episodes": 61 },
+      { "season": 2, "episodes": 16 },
+      { "season": 3, "episodes": 14 },
+      { "season": 4, "episodes": 39 },
+      { "season": 5, "episodes": 13 },
+      { "season": 6, "episodes": 52 },
+      { "season": 7, "episodes": 33 },
+      { "season": 8, "episodes": 35 },
+      { "season": 9, "episodes": 73 },
+      { "season": 10, "episodes": 45 },
+      { "season": 11, "episodes": 26 },
+      { "season": 12, "episodes": 14 },
+      { "season": 13, "episodes": 35 },
+      { "season": 14, "episodes": 61 },
+      { "season": 15, "episodes": 62 },
+      { "season": 16, "episodes": 50 },
+      { "season": 17, "episodes": 118 },
+      { "season": 18, "episodes": 36 },
+      { "season": 19, "episodes": 109 },
+      { "season": 20, "episodes": 150 }
+    ],
+    "year": 1999,
+    "status": "Ongoing",
+    "day": "Sunday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 99,
+    
+    "description": "Luffy sets sail to become the Pirate King by finding the legendary One Piece treasure."
+  },
+  {
+    "id": 4,
+    "title": "Naruto",
+    "image": "https://w0.peakpx.com/wallpaper/1021/130/HD-wallpaper-naruto-anime-kakashi-sakura-sasuke-shonen.jpg",
+    "genre": ["Action"],
+    "seasons": [
+      { "season": 1, "episodes": 100 },
+      { "season": 2, "episodes": 120 }
+    ],
+    "year": 2002,
+   "status": "Completed",
+    "day": "Thursday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 98,
+   
+    "description": "A young ninja seeks recognition and dreams of becoming the Hokage, the village leader."
+  },
+  {
+    "id": 5,
+    "title": "Dan Da Dan",
+    "image": "https://i.pinimg.com/736x/ee/1d/4f/ee1d4f1be2c235032be0c4587c5f4c16.jpg",
+    "genre": ["Supernatural"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2025,
+    "status": "Ongoing",
+    "day": "Tuesday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 80,
+    
+    "description": "A sci-fi battle between ghosts, aliens, and high school students."
+  },
+  {
+    "id": 6,
+    "title": "Dr. Stone",
+    "image": "https://w0.peakpx.com/wallpaper/84/527/HD-wallpaper-dr-stone-anime-iphone-red-samsung-senku.jpg",
+    "genre": ["Sci-Fi,Comedy"],
+    "seasons": [
+      { "season": 1, "episodes": 24 },
+      { "season": 2, "episodes": 11 },
+      { "season": 3, "episodes": 22 }
+    ],
+    "year": 2019,
+   "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Summer",
+    "language": ["Sub", "Dub"],
+    "popularity": 92,
+    
+    "description": "After humanity is petrified, genius Senku tries to rebuild civilization using science."
+  },
+  {
+    "id": 7,
+    "title": "New Saga",
+    "image": "https://m.media-amazon.com/images/M/MV5BMGI0NzU4Y2UtYzQwNS00YzdhLTk4YjctYmM5NTZmMDRlM2JiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "genre": ["Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2024,
+      "status": "Ongoing",
+    "day": "Wednesday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 78,
+    
+    "description": "A warrior gets a second chance to rewrite history and save the world."
+  },
+  {
+    "id": 8,
+    "title": "Tokyo Revengers",
+    "image": "https://w0.peakpx.com/wallpaper/489/641/HD-wallpaper-tokyo-revengers-wp-anime-anime-valhalla-tokyo-revengers-takemichi-hanagaki-manjiro-sano-takemichi-toman-tokyo-revengers-mikey.jpg",
+    "genre": ["Drama"],
+    "seasons": [
+      { "season": 1, "episodes": 24 },
+      { "season": 2, "episodes": 13 },
+      { "season": 3, "episodes": 13 }
+    ],
+    "year": 2021,
+     "status": "Ongoing",
+    "day": "Thursday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 90,
+
+    "description": "Takemichi time-travels to save his friends and change gang history."
+  },
+  {
+    "id": 9,
+    "title": "Black Clover",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcJSfB7RetRISlRcRdxhgqLVYIaH4rjFuipQ&s",
+    "genre": ["Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 170 }
+    ],
+    "year": 2017,
+     "status": "Ongoing",
+    "day": "Tuesday",
+    "seasonName": "Summer",
+    "language": ["Sub", "Dub"],
+    "popularity": 85,
+   
+    "description": "Asta, born without magic, aims to become the Wizard King."
+  },
+  {
+    "id": 10,
+    "title": "Black Butler",
+    "image": "https://m.media-amazon.com/images/I/81H3COSBQ5L.jpg",
+    "genre": ["Adventure"],
+    "seasons": [
+      { "season": 1, "episodes": 24 },
+      { "season": 2, "episodes": 12 },
+      { "season": 3, "episodes": 10 },
+      { "season": 4, "episodes": 6 }
+    ],
+    "year": 2008,
+    "status": "Completed",
+    "day": "Wednesday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 88,
+    "description": "Ciel and his demon butler solve crimes in Victorian England."
+  },
+  {
+    "id": 11,
+    "title": "Death Note",
+    "image": "https://static.posters.cz/image/750/death-note-from-the-shadows-i58005.jpg",
+    "genre": ["Thriller,Supernatural"],
+    "seasons": [
+      { "season": 1, "episodes": 37 }
+    ],
+    "year": 2006,
+       "status": "Completed",
+    "day": "Monday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 100,
+    
+    "description": "A notebook that kills its targets brings a battle of wits between Light and L."
+  },
+  {
+    "id": 12,
+    "title": "Dragon Ball Super",
+    "image": "https://m.media-amazon.com/images/I/81Z-WeVM-sS.jpg",
+    "genre": ["Action"],
+    "seasons": [
+      { "season": 1, "episodes": 131 }
+    ],
+    "year": 2015,
+   "status": "Completed",
+    "day": "Sunday",
+    "seasonName": "Spring",
+    "language": ["Dub"],
+    "popularity": 96,
+   
+    "description": "Goku reaches new power levels in epic battles across universes."
+  },
+  {
+    "id": 13,
+    "title": "Jujutsu Kaisen",
+    "image": "https://i.pinimg.com/736x/ac/43/52/ac4352f877cd4265d69538bd7532b7b3.jpg",
+    "genre": ["Supernatural"],
+    "seasons": [
+      { "season": 1, "episodes": 24 },
+      { "season": 2, "episodes": 23 }
+    ],
+    "year": 2020,
+    "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 97,
+    
+    "description": "Yuji swallows a cursed object and joins a sorcerer school to fight curses."
+  },
+  {
+    "id": 14,
+    "title": "Haikyu!!",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpe7ohW4xzDyg3D-sOpgq9Vu_nRqqEYCOcvw&s",
+    "genre": ["Sports,Adventure"],
+    "seasons": [
+      { "season": 1, "episodes": 25 },
+      { "season": 2, "episodes": 25 },
+      { "season": 3, "episodes": 10 },
+      { "season": 4, "episodes": 25 }
+    ],
+    "year": 2014,
+   "status": "Completed",
+    "day": "Saturday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 93,
+    
+    "description": "Shoyo Hinata dreams of becoming a volleyball ace despite his height."
+  },
+  {
+    "id": 15,
+    "title": "Wind Breaker",
+    "image": "https://i.pinimg.com/736x/b5/c8/17/b5c817f77fac5fdea158d190da7fbbc1.jpg",
+    "genre": ["Action"],
+    "seasons": [
+      { "season": 1, "episodes": 13 }
+    ],
+    "year": 2024,
+   "status": "Ongoing",
+    "day": "Monday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 82,
+    
+    "description": "A transfer student enters a school full of fighters to test his strength."
+  },
+  {
+    "id": 16,
+    "title": "Gachiakuta",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScw4QWeCsEqIjt312Y3UrzePEFaANRUcAvlg&s",
+    "genre": ["Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2024,
+    "status": "Ongoing",
+    "day": "Thursday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 76,
+  
+    "description": "Thrown into a world of trash and chaos, Rudo seeks revenge."
+  },
+  {
+    "id": 17,
+    "title": "Bleach",
+    "image": "https://i.pinimg.com/736x/8b/3e/9c/8b3e9c7953d6cdc568b288bdf25b4f10.jpg",
+    "genre": ["Supernatural"],
+    "seasons": [
+      { "season": 1, "episodes": 366 },
+      { "season": 2, "episodes": 26 },
+      { "season": 3, "episodes": 13 }
+    ],
+    "year": 2004,
+   "status": "Completed",
+    "day": "Saturday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 94,
+    
+    "description": "Ichigo becomes a Soul Reaper and fights to protect the living and dead."
+  },
+  {
+    "id": 18,
+    "title": "The Shiunji Family Children",
+    "image": "https://a.storyblok.com/f/178900/1280x1809/86e02165a2/the-shiunji-family-children-teaser-visual.jpg/m/filters:quality(95)format(webp)",
+    "genre": ["Comedy"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2024,
+     "status": "Ongoing",
+    "day": "Wednesday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 7,
+  
+    "description": "A boy returns to his new family with unexpected surprises."
+  },
+  {
+    "id": 19,
+    "title": "The Daily Life of the Immortal King",
+    "image": "https://m.media-amazon.com/images/M/MV5BODUwZGFlOTQtMWVjOS00N2Q2LWJmOGItOWM1NmQ4ODY2NTZiXkEyXkFqcGc@._V1_.jpg",
+    "genre": ["Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 15 },
+      { "season": 2, "episodes": 12 },
+      { "season": 3, "episodes": 12 }
+    ],
+    "year": 2020,
+      "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Summer",
+    "language": ["Sub", "Dub"],
+    "popularity": 89,
+    
+    "description": "A powerful high schooler hides his true strength to live peacefully."
+  },
+  {
+    "id": 20,
+    "title": "My Hero Academia",
+    "image": "https://i.pinimg.com/736x/1b/93/49/1b934928aea8257e00f2cf6bee855aee.jpg",
+    "genre": ["Action,Comedy"],
+    "seasons": [
+      { "season": 1, "episodes": 13 },
+      { "season": 2, "episodes": 25 },
+      { "season": 3, "episodes": 25 },
+      { "season": 4, "episodes": 25 },
+      { "season": 5, "episodes": 25 },
+      { "season": 6, "episodes": 25 },
+      { "season": 7, "episodes": 10 }
+    ],
+    "year": 2016,
+     "status": "Ongoing",
+    "day": "Saturday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 98,
+ 
+    "description": "Izuku Midoriya trains to become a pro hero in a world of quirks."
+  },
+  {
+    "id": 21,
+    "title": "Attack on Titan",
+    "image": "https://i.pinimg.com/474x/96/50/ff/9650ff654f66241448b9733f4a12dc85.jpg",
+    "genre": ["Action,Dark Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 25 },
+      { "season": 2, "episodes": 12 },
+      { "season": 3, "episodes": 22 },
+      { "season": 4, "episodes": 28 }
+    ],
+    "year": 2013,
+    "status": "Completed",
+    "day": "Sunday",
+    "seasonName": "Winter",
+    "language": ["Sub", "Dub"],
+    "popularity": 99,
+    
+    "description": "Eren and his friends fight against man-eating titans to survive."
+  },
+  {
+    "id": 22,
+    "title": "Hunter x Hunter",
+    "image": "https://images-cdn.ubuy.co.in/6353ac79771f1e13e575aa04-trends-international-x-hunter-book-key.jpg",
+    "genre": ["Adventure"],
+    "seasons": [
+      { "season": 1, "episodes": 148 }
+    ],
+    "year": 2011,
+      "status": "Completed",
+    "day": "Monday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 97,
+    
+    "description": "Gon becomes a Hunter to find his father and face deadly trials."
+  },
+  {
+    "id": 23,
+    "title": "One Punch Man",
+    "image": "https://images-cdn.ubuy.co.in/6749d637c53fd406cc3bb54c-one-punch-man-destruction-maxi-poster.jpg",
+    "genre": ["Comedy"],
+    "seasons": [
+      { "season": 1, "episodes": 12 },
+      { "season": 2, "episodes": 12 }
+    ],
+    "year": 2015,
+   "status": "Ongoing",
+    "day": "Wednesday",
+    "seasonName": "Summer",
+    "language": ["Sub", "Dub"],
+    "popularity": 95,
+  
+    "description": "Saitama defeats enemies with one punch, but seeks a real challenge."
+  },
+  {
+    "id": 24,
+    "title": "Blue Lock",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfXbiXggYGMMZctkfZ9r7zgE0PspF2O9gzA&s",
+    "genre": ["Sports"],
+    "seasons": [
+      { "season": 1, "episodes": 24 }
+    ],
+    "year": 2023,
+       "status": "Ongoing",
+    "day": "Thursday",
+    "seasonName": "Winter",
+    "language": ["Sub", "Dub"],
+    "popularity": 86,
+    
+    "description": "Japan's top strikers are locked in a brutal competition to become the best."
+  },
+  {
+    "id": 25,
+    "title": "Baki",
+    "image": "https://images.justwatch.com/poster/306783512/s718/season-2.jpg",
+    "genre": ["Action,Martial Arts"],
+    "seasons": [
+      { "season": 1, "episodes": 26 },
+      { "season": 2, "episodes": 13 },
+      { "season": 3, "episodes": 13 },
+      { "season": 4, "episodes": 13 }
+    ],
+    "year": 2018,
+     "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 83,
+    "description": "Baki trains to defeat powerful fighters, including his legendary father."
+  },
+  {
+    "id": 26,
+    "title": "Hajime no Ippo",
+    "image": "https://i.pinimg.com/736x/ea/e0/cf/eae0cfb8d0872e5199443cc5a88be73a.jpg",
+    "genre": ["Sports"],
+    "seasons": [
+      { "season": 1, "episodes": 76 },
+      { "season": 2, "episodes": 26 },
+      { "season": 3, "episodes": 25 }
+    ],
+    "year": 2000,
+    "status": "Completed",
+    "day": "Tuesday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 88,
+    "description": "Ippo rises from bullied teen to professional boxer."
+  },
+  {
+    "id": 27,
+    "title": "Slam Dunk",
+    "image": "https://i.pinimg.com/736x/6c/b0/97/6cb097f36fb8438fca2a5ad3c456687c.jpg",
+    "genre": ["Sports"],
+    "seasons": [
+      { "season": 1, "episodes": 101 }
+    ],
+    "year": 1993,
+     "status": "Completed",
+    "day": "Monday",
+    "seasonName": "Winter",
+    "language": ["Sub", "Dub"],
+    "popularity": 91,
+    "description": "A high school delinquent finds passion in basketball."
+  },
+  {
+    "id": 28,
+    "title": "MF Ghost",
+    "image": "https://i.redd.it/mf-ghost-phone-wallpapers-from-the-official-website-v0-ans8md37rapc1.png?width=1625&format=png&auto=webp&s=66a9162948c5c265d0f9de565b010aac217561fe",
+    "genre": ["Racing"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2023,
+    "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Spring",
+    "language": ["Sub"],
+    "popularity": 80,
+    
+    "description": "Set in the future, street racing continues with new generations."
+  },
+  {
+    "id": 29,
+    "title": "God's Game We Play",
+    "image": "https://m.media-amazon.com/images/M/MV5BNjc4NGQxY2ItZTE2NC00M2U4LTk4OTUtZTcxNjVlMDVjZDk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "genre": ["Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2024,
+      "status": "Ongoing",
+    "day": "Tuesday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 78,
+    
+    "description": "Humans and gods face off in mind games to win control."
+  },
+  {
+    "id": 30,
+    "title": "The Promised Neverland",
+    "image": "https://i.pinimg.com/736x/93/54/e7/9354e75ebdf6821b00a64d70fe9f8d0c.jpg",
+    "genre": ["Thriller"],
+    "seasons": [
+      { "season": 1, "episodes": 12 },
+      { "season": 2, "episodes": 11 }
+    ],
+    "year": 2019,
+     "status": "Completed",
+    "day": "Sunday",
+    "seasonName": "Winter",
+    "language": ["Sub", "Dub"],
+    "popularity": 96,
+    
+    "description": "Children at a perfect orphanage uncover a horrifying secret."
+  },
+  {
+    "id": 31,
+    "title": "Megalo Box",
+    "image": "https://i.pinimg.com/736x/cd/ea/09/cdea09a54c643fc5ecac0d5d996ee3ee.jpg",
+    "genre": ["Cyberpunk"],
+    "seasons": [
+      { "season": 1, "episodes": 13 },
+      { "season": 2, "episodes": 13 }
+    ],
+    "year": 2018,
+    "status": "Completed",
+    "day": "Saturday",
+    "seasonName": "Summer",
+    "language": ["Sub", "Dub"],
+    "popularity": 84,
+   
+    "description": "In a future with mechanical boxing, a fighter rises with pure skill."
+  },
+  {
+    "id": 32,
+    "title": "Chainsaw Man",
+    "image": "https://images-cdn.ubuy.co.in/6572ec2c2677ae300910432a-cinemaflix-chainsaw-man-japanese-anime.jpg",
+    "genre": ["Horror"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2022,
+    "status": "Ongoing",
+    "day": "Wednesday",
+    "seasonName": "Fall",
+    "language": ["Sub", "Dub"],
+    "popularity": 94,
+    
+    "description": "Denji becomes Chainsaw Man to escape poverty and fight devils."
+  },
+  {
+    "id": 33,
+    "title": "Dragon Ball Z",
+    "image": "https://imgc.allpostersimages.com/img/posters/dragon-ball-z-saiyans_u-L-FAENZV0.jpg",
+    "genre": ["Action"],
+    "seasons": [
+      { "season": 1, "episodes": 91 },
+      { "season": 2, "episodes": 120 },
+      { "season": 3, "episodes": 80 }
+    ],
+    "year": 1989,
+    "status": "Ongoing",
+    "day": "Tuesday",
+    "seasonName": "Winter",
+    "language": ["Sub", "Dub"],
+    "popularity": 100,
+    "description": "Goku and friends defend Earth from powerful enemies and gods."
+  },
+  {
+    "id": 34,
+    "title": "The Rising of the Shield Hero",
+    "image": "https://images.justwatch.com/poster/241519432/s166/the-rising-of-the-shield-hero",
+    "genre": ["Adventure", "Magic"],
+    "seasons": [
+      { "season": 1, "episodes": 25 },
+      { "season": 2, "episodes": 13 },
+      { "season": 3, "episodes": 12 }
+    ],
+    "year": 2019,
+   "status": "Ongoing",
+    "day": "Tuesday",
+    "seasonName": "Winter",
+    "language": ["Dub"],
+    "popularity": 92,
+   
+    "description": "Naofumi Iwatani, a gamer, is summoned to a parallel world along with three other heroes to fight against interdimensional monsters called Waves"
+  },
+  {
+    "id": 35,
+    "title": "Kaiju No. 8",
+    "image": "https://4kwallpapers.com/images/wallpapers/kaiju-no-8-poster-5k-5120x7236-19046.jpg",
+    "genre": ["Action", "Sci-Fi"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2024,
+   "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Winter",
+    "language": ["Sub"],
+    "popularity": 88,
+    
+    "description": "Kafka Hibino gains the power to transform into a kaiju while fighting monsters threatening humanity."
+  },
+  {
+    "id": 36,
+    "title": "Oshi no Ko",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzM3ZGJkN2YtOTQ5Ny00MzEyLTlkMzQtZDVhYzM3YWFlM2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "genre": ["Drama", "Supernatural"],
+    "seasons": [
+      { "season": 1, "episodes": 11 },
+      { "season": 2, "episodes": 13 }
+    ],
+    "year": 2023,
+     "status": "Ongoing",
+    "day": "Thursday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 90,
+  
+    "description": "Reincarnated as the children of an idol, twins uncover the dark secrets of the entertainment world."
+  },
+  {
+    "id": 37,
+    "title": "Frieren: Beyond Journey's End",
+    "image": "https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    "genre": ["Fantasy", "Drama"],
+    "seasons": [
+      { "season": 1, "episodes": 28 }
+    ],
+    "year": 2023,
+    "status": "Ongoing",
+    "day": "Saturday",
+    "seasonName": "Spring",
+    "language": ["Sub"],
+    "popularity": 87,
+   
+    "description": "An elf mage continues her journey long after defeating the Demon King, reflecting on mortality and bonds."
+  },
+  {
+    "id": 38,
+    "title": "Mashle: Magic and Muscles",
+    "image": "https://wallpapercg.com/media/ts_orig/20968.webp",
+    "genre": ["Fantasy", "Comedy"],
+    "seasons": [
+      { "season": 1, "episodes": 12 },
+      { "season": 2, "episodes": 12 }
+    ],
+    "year": 2023,
+    "status": "Ongoing",
+    "day": "Monday",
+    "seasonName": "Spring",
+    "language": ["Sub"],
+    "popularity": 83,
+    
+    "description": "In a magic-dominated world, Mash uses pure muscle strength to fight his way through a magical academy."
+  },
+  {
+    "id": 39,
+    "title": "Zom 100: Bucket List of the Dead",
+    "image": "https://www.cnet.com/a/img/resize/123bcd4b162f47cb6978cb028364770da7d3d16a/hub/2023/07/07/50bca37c-159c-4055-8f02-291d3bba2df7/zom-100.jpg?auto=webp&fit=crop&height=1200&width=1200",
+    "genre": ["Comedy", "Horror"],
+    "seasons": [
+      { "season": 1, "episodes": 12 }
+    ],
+    "year": 2023,
+    "status": "Ongoing",
+    "day": "Wednesday",
+    "seasonName": "Summer",
+    "language": ["Sub"],
+    "popularity": 81,
+    
+    "description": "Akira finally feels free after a zombie apocalypse begins, determined to live life fully before dying."
+  },
+  {
+    "id": 40,
+    "title": "Hell's Paradise",
+    "image": "https://resizing.flixster.com/5_1YujrM61psVrT88QxQIRDxVf4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNmVkZWRiMmYtZjNhMS00NGMyLWI2NDAtYmNlMzU2MGFiMGMwLnBuZw==",
+    "genre": ["Action", "Dark Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 13 }
+    ],
+    "year": 2023,
+    "status": "Ongoing",
+    "day": "Friday",
+    "seasonName": "Spring",
+    "language": ["Sub"],
+    "popularity": 85,
+   
+    "description": "Condemned criminals explore a mysterious island filled with horrors in search of the Elixir of Life."
+  },
+  {
+    "id": 41,
+    "title": "Spy x Family",
+    "image": "https://m.media-amazon.com/images/I/81uAmocNBtL.jpg",
+    "genre": ["Comedy", "Action"],
+    "seasons": [
+      { "season": 1, "episodes": 25 },
+      { "season": 2, "episodes": 13 }
+    ],
+    "year": 2022,
+      "status": "Ongoing",
+    "day": "Saturday",
+    "seasonName": "Spring",
+    "language": ["Sub", "Dub"],
+    "popularity": 93,
+   
+    "description": "A spy, an assassin, and a telepath child form a fake family while hiding their true identities."
+  },
+  {
+    "id": 42,
+    "title": "Jobless Reincarnation: Mushoku Tensei",
+    "image": "https://cdn.hmv.com/r/w-640/hmv/files/02/02b4caf0-6bf5-4a41-be07-7c9448ab1f63.jpg",
+    "genre": ["Isekai", "Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 23 },
+      { "season": 2, "episodes": 24 }
+    ],
+    "year":2021,
+     "status": "Ongoing",
+    "day": "Sunday",
+    "seasonName": "Spring",
+    "language": ["Sub"],
+    "popularity": 89,
+    "description": "A man reincarnates into a fantasy world with great magical talent, seeking redemption in a new life."
+  },
+  {
+    "id": 43,
+    "title": "To Your Eternity",
+    "image": "https://m.media-amazon.com/images/M/MV5BMzZhYzAzODUtMzYxMi00OWE1LWI4ZTQtYzU4ZjgxZjcxODA3XkEyXkFqcGc@._V1_.jpg",
+    "genre": ["Drama", "Fantasy"],
+    "seasons": [
+      { "season": 1, "episodes": 20 },
+      { "season": 2, "episodes": 20 }
+    ],
+    "year": 2021,
+   "status": "Ongoing",
+    "day": "Tuesday",
+    "seasonName": "Spring",
+    "language": [ "Dub"],
+    "popularity": 88,
+    "description": "An immortal being takes different forms to experience humanity, love, and loss across time."
+  },
+  {
+    "id": 44,
+    "title": "Tokyo Ghoul",
+    "image": "https://i.pinimg.com/736x/bb/d5/9b/bbd59b6cbfb0d1a2a1b64da1accd76a8.jpg",
+    "genre": ["Dark Fantasy", "Horror"],
+    "seasons": [
+      { "season": 1, "episodes": 12 },
+      { "season": 2, "episodes": 12 },
+      { "season": 3, "episodes": 24 },
+      { "season": 4, "episodes": 12 }
+    ],
+    "year": 2014,
+     "seasonName": "Fall",
+    "status": "Completed",
+    "day": "Monday",
+    "popularity": 91,
+    "language": [ "Dub"],
+    "description": "Kaneki becomes half-ghoul and struggles to survive between the human and ghoul worlds."
+  }
+]
+
+

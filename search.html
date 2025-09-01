@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anime Search</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    /* Base styles */
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: white;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background-color: #1f1f1f;
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      gap: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #f5f5f5;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .navbar a:hover {
+      color: #ff4757;
+    }
+
+    .navbar h1 {
+      margin: 0;
+      font-size: 22px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .search-box {
+      display: flex;
+      justify-content: center;
+      padding: 30px 20px 10px;
+    }
+
+    #searchInput {
+      width: 100%;
+      max-width: 600px;
+      padding: 12px 20px;
+      border-radius: 20px;
+      border: none;
+      font-size: 16px;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      box-shadow: 0 0 10px #ff6a00;
+    }
+    
+    #searchInput:focus {
+      outline: none;
+      box-shadow: 0 0 20px #ff6a00;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .anime-card {
+      background-color: #1f1f1f;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .anime-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #ff6a00;
+    }
+
+    .anime-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .anime-card h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      padding: 0 10px;
+    }
+
+    .anime-card p {
+      font-size: 14px;
+      color: #ccc;
+      padding: 0 10px 10px;
+      margin: 5px 0;
+      display: -webkit-box;
+      /* -webkit-line-clamp: 3; */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .anime-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .anime-popup .popup-content {
+      display: flex;
+      flex-direction: column;
+      background: #1e1e1e;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .popup-left {
+      margin-bottom: 20px;
+      position: relative;
+      text-align: center;
+    }
+
+    .popup-left img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .play-icon:hover {
+      opacity: 1;
+      color: tomato;
+    }
+
+    .popup-right {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #popupTitle {
+      font-size: 24px;
+      color: tomato;
+      margin-bottom: 10px;
+    }
+
+    #popupGenreYear {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #aaa;
+    }
+
+    #popupDescription {
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .close-btn:hover {
+      color: tomato;
+    }
+
+    .season-box,
+    .episode-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .season-box button,
+    .episode-box button {
+      padding: 6px 10px;
+      border: none;
+      background-color: #333;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .season-box button.active,
+    .episode-box button:hover {
+      background-color: tomato;
+    }
+
+    /* Media Queries */
+    @media (min-width: 768px) {
+      .anime-popup .popup-content {
+        flex-direction: row;
+        gap: 20px;
+      }
+      
+      .popup-left {
+        flex: 1;
+        margin-bottom: 0;
+        text-align: left;
+      }
+      
+      .popup-right {
+        flex: 2;
+      }
+      
+      .results {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+      
+      .anime-card img {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navbar h1 {
+        font-size: 18px;
+      }
+      
+      .navbar a {
+        font-size: 16px;
+      }
+      
+      .search-box {
+        padding: 20px 15px 10px;
+      }
+      
+      .results {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+        padding: 15px;
+      }
+      
+      .anime-card img {
+        height: 190px;
+      }
+      
+      .anime-card h3 {
+        font-size: 14px;
+      }
+      
+      .anime-card p {
+        font-size: 12px;
+        /* -webkit-line-clamp: 2; */
+      }
+      
+      .season-box, .episode-box {
+        gap: 5px;
+      }
+      
+      .season-box button, .episode-box button {
+        padding: 5px 8px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="navbar">
+    <a href="header.html" class="back-home">
+      <i class="fas fa-arrow-left"></i> Home
+    </a>
+    <h1>Search Anime</h1>
+  </nav>
+
+  
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search your anime... " />
+  </div>
+
+
+  <div id="results" class="results"></div>
+  
+<div class="anime-popup" id="animePopup">
+  <div class="popup-content">
+    <div class="popup-left">
+      <img id="popupImage" src="" alt="Anime Image">
+      <div class="play-icon">
+        <i class="fas fa-play"></i>
+      </div>
+    </div>
+    <div class="popup-right">
+      <i class="fas fa-times close-btn" id="closePopup"></i>
+      <h2 id="popupTitle"></h2>
+      <p id="popupGenreYear"></p>
+      <p id="popupDescription"></p>
+
+      <div id="seasonBox" class="season-box"></div>
+      <div id="episodeBox" class="episode-box"></div>
+    </div>
+  </div>
+</div>
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const searchInput = document.getElementById("searchInput");
+      const resultsDiv = document.getElementById("results");
+
+      let animeList = [];
+      let briefAnimeList = [];
+
+      // 1. Load both anime.json and briefanime.json
+      Promise.all([
+        fetch("anime.json").then(res => res.json()),
+        fetch("briefanime.json").then(res => res.json())
+      ])
+      .then(([animeData, briefData]) => {
+        animeList = animeData;
+        briefAnimeList = briefData;
+      })
+      .catch(err => {
+        console.error("Error loading data:", err);
+        resultsDiv.innerHTML = "<p style='color:red; text-align:center; padding: 20px;'>Failed to load data.</p>";
+      });
+
+      // 2. Handle input typing with debounce
+      let debounceTimer;
+      searchInput.addEventListener("input", () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          const query = searchInput.value.toLowerCase().trim();
+          if (query.length < 2) {
+            resultsDiv.innerHTML = "<p style='text-align:center; padding: 20px;'>Type at least 2 characters to search</p>";
+            return;
+          }
+          
+          const filtered = animeList.filter(anime =>
+            anime.title.toLowerCase().includes(query)
+          );
+          showResults(filtered);
+        }, 300);
+      });
+
+      // 3. Show results using anime.json
+      function showResults(animeArray) {
+        resultsDiv.innerHTML = "";
+
+        if (animeArray.length === 0) {
+          resultsDiv.innerHTML = "<p style='text-align:center; padding: 20px; width: 100%;'>No results found.</p>";
+          return;
+        }
+
+        animeArray.forEach(anime => {
+          const card = document.createElement("div");
+          card.className = "anime-card";
+          card.setAttribute("data-id", anime.id); // So we can link to briefAnime
+
+          // Truncate description if too long
+          const description = anime.description 
+            ? (anime.description.length > 100 
+                ? anime.description.substring(0, 100) + "..." 
+                : anime.description)
+            : "No description available.";
+
+          card.innerHTML = `
+            <img src="${anime.image}" alt="${anime.title}" />
+            <h3>${anime.title}</h3>
+            <p>${description}</p>
+            <p><strong>Genre:</strong> ${anime.genre || "N/A"}</p>
+            <p><strong>Year:</strong> ${anime.year || "N/A"}</p>
+          `;
+
+          // Popup event on click using briefanime.json
+          card.addEventListener("click", () => {
+            const briefAnime = briefAnimeList.find(a => a.id == anime.id);
+            if (briefAnime) {
+              openPopup(briefAnime);
+            } else {
+              alert("Details not available for this anime.");
+            }
+          });
+
+          resultsDiv.appendChild(card);
+        });
+      }
+
+      // 4. Popup Logic
+      const animePopup = document.getElementById("animePopup");
+      const popupImage = document.getElementById("popupImage");
+      const popupTitle = document.getElementById("popupTitle");
+      const popupGenreYear = document.getElementById("popupGenreYear");
+      const popupDescription = document.getElementById("popupDescription");
+      const seasonBox = document.getElementById("seasonBox");
+      const episodeBox = document.getElementById("episodeBox");
+      const closePopup = document.getElementById("closePopup");
+
+      function openPopup(anime) {
+        popupImage.src = anime.image;
+        popupTitle.textContent = anime.name || anime.title;
+        popupGenreYear.textContent = `${anime.genre} • ${anime.year}`;
+        popupDescription.textContent = anime.description || "No description available.";
+
+        seasonBox.innerHTML = "";
+        episodeBox.innerHTML = "";
+
+        if (anime.seasons && anime.seasons.length > 0) {
+          anime.seasons.forEach((seasonObj, index) => {
+            const seasonBtn = document.createElement("button");
+            seasonBtn.textContent = `Season ${seasonObj.season}`;
+            seasonBtn.classList.add("season-btn");
+
+            if (index === 0) {
+              seasonBtn.classList.add("active");
+              loadEpisodes(seasonObj.episodes);
+            }
+
+            seasonBtn.addEventListener("click", () => {
+              seasonBox.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+              seasonBtn.classList.add("active");
+              loadEpisodes(seasonObj.episodes);
+            });
+
+            seasonBox.appendChild(seasonBtn);
+          });
+        }
+
+        animePopup.style.display = "flex";
+        document.body.style.overflow = "hidden";
+      }
+
+      function loadEpisodes(count) {
+        episodeBox.innerHTML = "";
+        for (let i = 1; i <= count; i++) {
+          const epBtn = document.createElement("button");
+          epBtn.textContent = `Ep ${i}`;
+          episodeBox.appendChild(epBtn);
+        }
+      }
+
+      closePopup.addEventListener("click", () => {
+        animePopup.style.display = "none";
+        document.body.style.overflow = "auto";
+      });
+      
+      // Close popup when clicking outside content
+      animePopup.addEventListener("click", (e) => {
+        if (e.target === animePopup) {
+          animePopup.style.display = "none";
+          document.body.style.overflow = "auto";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

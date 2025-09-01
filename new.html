@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunchyroll - Anime Streaming</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: tomato;
+            --bg-dark: #151515;
+            --bg-darker: #111;
+            --text-light: #f5f5f5;
+            --text-gray: #ccc;
+            --card-bg: #1f1f1f;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px; /* Account for fixed navbar */
+        }
+        
+        body.light-mode {
+            background-color: white;
+            color: #333;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #2a2a2a;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar.light-mode {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            margin-right: 0;
+        }
+        
+        .logo {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+        }
+        
+        .nav-link.light-mode {
+            color: #333 !important;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link.active {
+            color: white !important;
+        }
+        
+        .nav-link.active.light-mode {
+            color: #333 !important;
+        }
+        
+        .nav-link.active:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .search-link {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .search-link.light-mode {
+            color: #333 !important;
+        }
+        
+        .search-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: white;
+            border-radius: 30px;
+            margin: 0 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .toggle.light-mode {
+            background-color: black;
+        }
+        
+        .toggle-icon {
+            color: orangered;
+            font-size: 0.8rem;
+        }
+        
+        .toggle-ball {
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            position: absolute;
+            right: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s ease all;
+        }
+        
+        .toggle-ball.light-mode {
+            background-color: white;
+            transform: translateX(-20px);
+        }
+        
+        /* Featured Content */
+    
+        /* Movie Lists */
+        .movie-list-container {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .movie-list-title {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        
+        .movie-list-title.light-mode {
+            color: #333;
+        }
+        
+        .movie-list-wrapper {
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+       .main-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.movie-list-item {
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+        .movie-list-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .img-box {
+            position: relative;
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .movie-list-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .movie-list-item:hover .movie-list-item-img {
+            transform: scale(1.1);
+        }
+        
+        .movie-info {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.35s;
+        }
+        
+        .img-box:hover .movie-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .movie-list-item-desc {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        
+        .movie-list-item-desc.light-mode {
+            color: #333;
+        }
+       
+        /* Custom Arrow */
+        .arrow {
+            font-size: 40px;
+            color: rgb(184, 181, 181);
+            opacity: 0.9;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .arrow:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        
+        .arrow-left {
+            left: 10px;
+            right: auto;
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-section.light-mode {
+            background-color: #f8f9fa;
+        }
+        
+        .filter-title {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .filter-title.light-mode {
+            color: #333;
+        }
+        
+        .filter-group {
+            margin-bottom: 15px;
+        }
+        
+        .filter-label {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            display: block;
+            font-weight: 500;
+        }
+        
+        .filter-label.light-mode {
+            color: #333;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 6px 12px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .filter-btn.light-mode {
+            background-color: #e9ecef;
+            color: #333;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Popup Styles */
+        .anime-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        
+        .popup-content {
+            background: #1e1e1e;
+            color: white;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .popup-left img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .play-icon:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        
+        #popupTitle {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        #popupGenreYear {
+            color: white !important;
+            margin-bottom: 15px;
+        }
+        
+        .season-box, .episode-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .season-box button, .episode-box button {
+            padding: 6px 12px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .season-box button.active, .episode-box button:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .close-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: var(--bg-darker);
+            color: var(--text-gray);
+            padding: 30px 0 15px;
+            margin-top: 40px;
+        }
+        
+        .main-footer.light-mode {
+            background-color: #f8f9fa;
+            color: #6c757d;
+        }
+        
+        .footer-links h4, .footer-social h4 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .footer-links h4.light-mode, .footer-social h4.light-mode {
+            color: #333;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links ul li:hover {
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .social-icons i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--text-gray);
+            transition: color 0.3s;
+        }
+        
+        .social-icons i:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 0 5px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+           
+        
+            .img-box {
+                height: 220px;
+            }
+            
+            .movie-info {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .movie-list-item {
+                width: 160px;
+            }
+            
+            .arrow {
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .filter-options {
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                padding: 5px 10px;
+                font-size: 0.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            
+            .img-box {
+                height: 180px;
+            }
+            
+            .movie-list-item {
+                width: 140px;
+            }
+            
+            .popup-content {
+                padding: 15px;
+            }
+            
+            .season-box, .episode-box {
+                gap: 5px;
+            }
+            
+            .season-box button, .episode-box button {
+                padding: 5px 8px;
+                font-size: 0.8rem;
+            }
+            
+            .navbar-toggler {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .featured-button {
+                padding: clamp(6px, 1.6vw, 10px) clamp(12px, 3.2vw, 25px);
+                font-size: clamp(0.85rem, 2.2vw, 1rem);
+            }
+            
+            .nav-actions { 
+                gap: 10px; 
+            }
+            
+            .anime-popup { 
+                padding: 12px; 
+            }
+            
+            .popup-content {
+                max-width: min(900px, 92vw);
+            }
+            
+            .main-list { 
+                gap: 15px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="header.html">
+                <h1 class="logo mb-0">Crunchyroll</h1>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="new.html">New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="popular.html">Popular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="simulcast.html">Simulcast</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <div class="toggle me-2">
+                        <i class="fa-solid fa-moon toggle-icon"></i>
+                        <i class="fa-solid fa-sun toggle-icon"></i>
+                        <div class="toggle-ball"></div>
+                    </div>
+                    
+                    <a href="#" class="search-link me-3">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                    
+                    <div class="dropdown">
+                        <img class="profile-pic dropdown-toggle" src="https://wallpapers.com/images/hd/dr-stone-pictures-sbqnn74m5qqqz0t0.jpg" alt="Profile" id="profileDropdown" data-bs-toggle="dropdown">
+                        
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header">Senku Ishigami</h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Switch Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                            <li><a class="dropdown-item" href="#">Gift Card</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+     
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h3 class="filter-title">Filter Anime</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="filter-group">
+                        <label class="filter-label">Genre</label>
+                        <div class="filter-options" id="genreFilters">
+                            <button class="filter-btn active" data-genre="all">All</button>
+                            <button class="filter-btn" data-genre="Action">Action</button>
+                            <button class="filter-btn" data-genre="Adventure">Adventure</button>
+                            <button class="filter-btn" data-genre="Fantasy">Fantasy</button>
+                            <button class="filter-btn" data-genre="Comedy">Comedy</button>
+                            <button class="filter-btn" data-genre="Drama">Drama</button>
+                            <button class="filter-btn" data-genre="Supernatural">Supernatural</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="filter-group">
+                        <label class="filter-label">Language</label>
+                        <div class="filter-options" id="languageFilters">
+                            <button class="filter-btn active" data-language="all">All</button>
+                            <button class="filter-btn" data-language="Sub">Subtitled</button>
+                            <button class="filter-btn" data-language="Dub">Dubbed</button>
+                            <button class="filter-btn" data-language="Sub|Dub">Both</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+  <div class="filter-group">
+    <label for="yearRange">Year: <span id="yearVal">1999</span>+</label>
+    <input type="range" id="yearRange" min="1999" max="2025" value="2023" step="1">
+  </div>
+</div>
+                
+            </div>
+        </div>
+
+        <!-- New Releases Section -->
+        <div class="movie-list-container mb-5">
+            <h2 class="movie-list-title">New Releases</h2>
+            <div class="movie-list-wrapper">
+                <div class="main-list" id="newReleasesList">
+                    <!-- Anime items will be populated by JavaScript -->
+                </div>
+                <!-- <div class="arrow arrow-left"><i class="fas fa-chevron-left"></i></div>
+                <div class="arrow"><i class="fas fa-chevron-right"></div> -->
+            </div>
+        </div>
+
+    </div>  
+    <!-- Anime Popup -->
+    <div class="anime-popup" id="animePopup">
+        <div class="popup-content position-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 p-4">
+                        <div class="popup-left position-relative">
+                            <img id="popupImage" src="" alt="Anime Image" class="w-100">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 p-4">
+                        <div class="popup-right">
+                            <i class="fas fa-times close-btn" id="closePopup"></i>
+                            <h2 id="popupTitle"></h2>
+                            <p id="popupGenreYear" class="text-muted"></p>
+                            <p id="popupDescription"></p>
+                            <div id="seasonBox" class="season-box"></div>
+                            <div id="episodeBox" class="episode-box mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+<script>
+  // ===== DOM =====
+  const toggleBall = document.querySelector(".toggle-ball");
+  const toggle = document.querySelector(".toggle");
+  const body = document.querySelector("body");
+  const navbar = document.querySelector(".navbar");
+  const movieListTitles = document.querySelectorAll(".movie-list-title");
+  const movieListDescs = document.querySelectorAll(".movie-list-item-desc");
+  const searchLinks = document.querySelectorAll(".search-link");
+  const filterSection = document.querySelector(".filter-section");
+  const filterTitles = document.querySelectorAll(".filter-title");
+  const filterLabels = document.querySelectorAll(".filter-label");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+
+  // sections (some may be missing in HTML and that's OK)
+  const newReleasesList = document.getElementById("newReleasesList");
+//   const topPicksList = document.getElementById("topPicksList");   // may be null
+//   const popularList = document.getElementById("popularList");     // may be null
+
+  // filters
+  const genreFilters = document.getElementById("genreFilters");
+  const languageFilters = document.getElementById("languageFilters");
+//   const yearFilters = document.getElementById("yearFilters");
+  const yearSlider = document.getElementById("yearRange");
+const yearVal = document.getElementById("yearVal");
+
+
+  // popup
+  const animePopup = document.getElementById("animePopup");
+  const popupImage = document.getElementById("popupImage");
+  const popupTitle = document.getElementById("popupTitle");
+  const popupGenreYear = document.getElementById("popupGenreYear");
+  const popupDescription = document.getElementById("popupDescription");
+  const seasonBox = document.getElementById("seasonBox");
+  const episodeBox = document.getElementById("episodeBox");
+  const closePopup = document.getElementById("closePopup");
+
+  // ===== THEME TOGGLE (unchanged) =====
+  toggleBall.addEventListener("click", () => {
+    toggleBall.classList.toggle("light-mode");
+    toggle.classList.toggle("light-mode");
+    body.classList.toggle("light-mode");
+    navbar.classList.toggle("light-mode");
+    movieListTitles.forEach(t => t.classList.toggle("light-mode"));
+    movieListDescs.forEach(d => d.classList.toggle("light-mode"));
+    searchLinks.forEach(l => l.classList.toggle("light-mode"));
+    filterSection.classList.toggle("light-mode");
+    filterTitles.forEach(t => t.classList.toggle("light-mode"));
+    filterLabels.forEach(l => l.classList.toggle("light-mode"));
+    filterBtns.forEach(b => b.classList.toggle("light-mode"));
+    document.querySelectorAll(".nav-link").forEach(l => l.classList.toggle("light-mode"));
+  });
+
+  // ===== DATA =====
+  let animeList = [];
+  let newReleases = [];
+//   let topPicks = [];
+//   let popularAnime = [];
+
+  // Load your JSON (put the right filename here)
+  init();
+  async function init() {
+    try {
+      // use your actual file name: e.g. "briefanime.json" or "anime.json"
+      const res = await fetch("briefanime.json");
+      animeList = await res.json();
+
+      computeBuckets();
+      renderAll();      // initial render
+      wireFilters();    // set up filters after buckets exist
+    } catch (err) {
+      console.error("Failed to load JSON:", err);
+    }
+  }
+
+ function computeBuckets() {
+  newReleases = animeList.filter(a => Number(a.year) >= 2023 && Number(a.year) <= 2025);
+ }
+    // topPicks = animeList.filter(a => Number(a.popularity || 0) > 90);
+    // popularAnime = [...animeList].sort(
+    //   (a, b) => Number(b.popularity || 0) - Number(a.popularity || 0)
+    // );
+  
+
+  // ===== RENDER =====
+  function renderAll() {
+    renderIf(newReleasesList, newReleases);
+    // renderIf(topPicksList, topPicks);     // safe even if null
+    // renderIf(popularList, popularAnime);  // safe even if null
+  }
+
+  function renderIf(container, data) {
+    if (!container) return; // section not in HTML yet
+    renderAnimeList(data, container);
+  }
+
+  function renderAnimeList(animeArray, container) {
+    container.innerHTML = "";
+    animeArray.forEach(anime => {
+      const item = document.createElement("div");
+      item.className = "movie-list-item";
+      item.dataset.id = anime.id;
+
+      // keep your hover structure the same
+      item.innerHTML = `
+        <div class="img-box">
+          <img class="movie-list-item-img" src="${anime.image}" alt="${anime.title}">
+          <div class="movie-info">
+            <h4>${anime.title ?? anime.name ?? "Untitled"}</h4>
+            <p>${anime.genre ?? "—"} • ${anime.year ?? "—"}</p>
+            <p>${(anime.description || "").slice(0, 100)}...</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">${anime.title ?? anime.name ?? ""}</p>
+      `;
+
+      item.addEventListener("click", () => openAnimePopup(anime));
+      container.appendChild(item);
+    });
+  }
+
+  // ===== POPUP =====
+  function openAnimePopup(anime) {
+    popupImage.src = anime.image;
+    popupTitle.textContent = anime.title ?? anime.name ?? "Untitled";
+    popupGenreYear.textContent = `${anime.genre ?? "—"} • ${anime.year ?? "—"} • ${anime.status ?? ""}`;
+    popupDescription.textContent = anime.description || "";
+
+    seasonBox.innerHTML = "";
+    episodeBox.innerHTML = "";
+
+    if (Array.isArray(anime.seasons) && anime.seasons.length) {
+      anime.seasons.forEach((s, i) => {
+        const btn = document.createElement("button");
+        btn.textContent = `Season ${s.season}`;
+        if (i === 0) {
+          btn.classList.add("active");
+          showEpisodes(s.episodes);
+        }
+        btn.addEventListener("click", () => {
+          seasonBox.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          showEpisodes(s.episodes);
+        });
+        seasonBox.appendChild(btn);
+      });
+    } else {
+      // graceful fallback
+      const btn = document.createElement("button");
+      btn.textContent = "Season 1";
+      btn.classList.add("active");
+      seasonBox.appendChild(btn);
+      showEpisodes(anime.episodes || 12);
+    }
+
+    animePopup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function showEpisodes(count) {
+    episodeBox.innerHTML = "";
+    const total = Number(count) || 12;
+    for (let i = 1; i <= total; i++) {
+      const ep = document.createElement("button");
+      ep.textContent = `Ep ${i}`;
+      ep.addEventListener("click", () => alert(`Would play episode ${i}`));
+      episodeBox.appendChild(ep);
+    }
+  }
+
+  closePopup.addEventListener("click", () => {
+    animePopup.style.display = "none";
+    document.body.style.overflow = "auto";
+  });
+  animePopup.addEventListener("click", e => {
+    if (e.target === animePopup) {
+      animePopup.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  // ===== FILTERS =====
+  const activeFilters = { genre: "all", language: "all", year: "all" };
+
+
+  function wireFilters() {
+    genreFilters?.addEventListener("click", e => {
+      if (!e.target.classList.contains("filter-btn")) return;
+      genreFilters.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      e.target.classList.add("active");
+      activeFilters.genre = e.target.dataset.genre;
+      applyFilters();
+    });
+
+    languageFilters?.addEventListener("click", e => {
+      if (!e.target.classList.contains("filter-btn")) return;
+      languageFilters.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+      e.target.classList.add("active");
+      activeFilters.language = e.target.dataset.language;
+      applyFilters();
+    });
+
+    // yearFilters?.addEventListener("click", e => {
+    //   if (!e.target.classList.contains("filter-btn")) return;
+    //   yearFilters.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+    //   e.target.classList.add("active");
+    //   activeFilters.year = e.target.dataset.year;
+    //   applyFilters();
+    // });
+  }
+activeFilters.year = 2023; // default
+yearVal.textContent = activeFilters.year;
+
+yearSlider.addEventListener("input", () => {
+  activeFilters.year = Number(yearSlider.value);
+  yearVal.textContent = yearSlider.value;
+  applyNewFilters();
+});
+
+function applyNewFilters() {
+  let filteredList = [...animeList]; // use ALL anime, not just newReleases
+  filteredList = filteredList.filter(a => Number(a.year) >= activeFilters.year);
+
+
+  // Genre filter
+  if (activeFilters.genre !== "all") {
+    filteredList = filteredList.filter(a =>
+      (Array.isArray(a.genre) ? a.genre.join(", ") : a.genre || "")
+        .toLowerCase()
+        .includes(activeFilters.genre.toLowerCase())
+    );
+  }
+
+  // Language filter
+  if (activeFilters.language !== "all") {
+    filteredList = filteredList.filter(a => {
+      if (!Array.isArray(a.language)) return false;
+      if (activeFilters.language === "Sub|Dub") {
+        return a.language.includes("Sub") && a.language.includes("Dub");
+      } else {
+        return a.language.includes(activeFilters.language);
+      }
+    });
+  }
+
+  renderIf(newReleasesList, filteredList); // show filtered list
+}
+
+</script>
+
+</body>
+</html>

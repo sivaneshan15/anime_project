@@ -1,0 +1,167 @@
+/* GENERAL RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: black;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(https://i.redd.it/ixquuf36gmp91.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* FORM CONTAINER */
+#signup-page {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.signup-container {
+    width: 500px;
+    padding: 30px;
+    left: 100px;
+    height: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 55px rgba(255, 69, 0, 0.6);
+    background-color: rgba(0,0,0,0.3); /* optional slight background for readability */
+}
+
+/* CHARACTER IMAGES */
+.pose {
+    position: absolute;
+}
+
+#greet { width: 130px; right: 740px; bottom: 90px; z-index: 1; animation: float 3s ease-in-out infinite; filter: drop-shadow(0 0 15px rgb(6,235,247)); pointer-events: none; }
+#power { width: 250px; right: 740px; bottom: 90px; z-index: 1; filter: drop-shadow(0 0 55px rgb(255,77,0)); }
+#final { width: 160px; right: 780px; bottom: 90px; z-index: 1; filter: drop-shadow(0 0 55px rgb(255,77,0)); }
+
+#hold { width: 170px; left: 888px; bottom: 90px; z-index: 1; animation: gokufloat 3s ease-in-out infinite; filter: drop-shadow(0 0 15px orangered); pointer-events: none; }
+#gokupo { width: 310px; left: 730px; bottom: 90px; z-index: 1; filter: drop-shadow(0 0 55px rgb(255,77,0)); }
+#gokufinal { width: 370px; left: 702px; bottom: 90px; z-index: 1; filter: drop-shadow(0 0 55px rgb(255,77,0)); }
+
+.character-container-goku .aura, .character-container.vegeta .aura {
+    width: 400px;
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.aura {
+    position: absolute;
+    width: 600px;
+    height: 850px;
+    top: -59px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    animation: auraPulse 2s infinite ease-in-out;
+}
+
+.character-container-goku .aura { left: 680px; }
+.character-container.vegeta .aura { right: 680px; }
+
+@keyframes float {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-20px); }
+}
+
+@keyframes gokufloat {
+    0%,100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-20px); }
+}
+
+@keyframes auraPulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* TITLE */
+.signup-title {
+    color: orangered;
+    font-size: 40px;
+    position: absolute;
+    /* top: 20px;  */
+    bottom: 580px;
+    left: 200px;
+    transform: translateX(-50%);
+    text-shadow: 0 0 20px orangered;
+}
+
+/* INPUTS */
+.signup-inputs {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signup-inputs label { font-weight: bold; color: orangered; text-shadow: 0 0 5px orangered; margin-bottom: 5px; }
+.signup-inputs input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 3px solid orangered;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.signup-inputs input::placeholder { color: white; }
+.signup-inputs input:hover, .signup-inputs input:focus { transform: scale(1.03); box-shadow: 0 0 10px orangered; }
+
+/* BUTTON */
+#submitbutton {
+    color: white;
+    font-weight: bold;
+    background-color: transparent;
+    border: 2px solid orangered;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 200px;
+    height: 40px;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#submitbutton:hover { background-color: orangered; color: black; transform: scale(1.05); box-shadow: 0 0 10px orangered; }
+
+/* LOGIN/SIGNUP LINK */
+.login-link {
+    color: white;
+    margin-top: 15px;
+    text-align: center;
+}
+.login-link a { color: white; text-decoration: none; font-weight: bold; transition: 0.3s; }
+.login-link a:hover { color: orangered; text-shadow: 0 0 8px orangered; }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .signup-container { width: 400px; padding: 20px; height: auto; }
+}
+@media (max-width: 768px) {
+    .signup-container { width: 350px; padding: 15px; height: auto; }
+    .character-container-goku, .character-container.vegeta { display: none; }
+}
+@media (max-width: 576px) {
+    .signup-container { width: 300px; padding: 10px; height: auto; }
+    .signup-title { font-size: 28px; }
+}

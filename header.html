@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunchyroll - Anime Streaming</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: tomato;
+            --bg-dark: #151515;
+            --bg-darker: #111;
+            --text-light: #f5f5f5;
+            --text-gray: #ccc;
+            --card-bg: #1f1f1f;
+        }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px; /* Account for fixed navbar */
+        }
+        body.active {
+            background-color: white;
+            color:white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 70px; /* Account for fixed navbar */
+        }
+/*         
+        
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #2a2a2a ;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar-brand {
+            margin-right: 0;
+        }
+        
+        .logo {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .nav-link {
+            color: var(--text-light) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+         .nav-link.active{
+            color: white !important;
+         }
+         .nav-link.active:hover{
+            color: var(--primary-color) !important;
+         }
+        
+
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+        
+        .search-link {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            margin-right: 1rem;
+        }
+        
+        .search-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .toggle {
+            width: 40px;
+            height: 20px;
+            background-color: white;
+            border-radius: 30px;
+            margin: 0 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .toggle-icon {
+            color: orangered;
+            font-size: 0.8rem;
+        }
+        
+        .toggle-ball {
+            width: 18px;
+            height: 18px;
+            background-color: black;
+            position: absolute;
+            right: 1px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: 0.3s ease all;
+        }
+        
+        /* Featured Content */
+        .featured-content {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .featured-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), var(--bg-dark));
+        }
+        
+        .featured-content-one {
+            background-image: url("https://sgimage.netmarble.com/images/netmarble/sololv/20240105/kpf91704430388393.jpg");
+        }
+        
+        .featured-content-two {
+            background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgsnkR2HIZACi9XBZUOfAputMa8b18l3uvMF54vW_UjG3-FR6Dad5R0DE41eb2_IZhV1sIAlEtpNE5XpDLiVh00WQ6BFXgs_-igKfj9bWRUcDAFV_byVDzOamRtLZo4CChGkjUb-HqlDpDb/w919/tokyo-revengers-manjiro-anime-characters-4k-uhdpaper.com-700.1_a-thumbnail.jpg");
+        }
+        
+        .featured-content-three {
+            background-image: url("https://4kwallpapers.com/images/wallpapers/demon-slayer-3840x2160-17643.jpg");
+        }
+        
+        .feature-title {
+            max-width: 250px;
+            margin-bottom: 20px;
+            mix-blend-mode: lighten;
+        }
+
+        .feature-title-three {
+            max-width: 250px;   /* common size */
+            margin-right: 200px;
+             width: 100%;        /* responsive */
+              display: block;
+             margin: 0;          /* no fixed margin */
+             mix-blend-mode: lighten;
+}
+        .feature-desc {
+            max-width: 500px;
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+        }
+        
+        .featured-button {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .featured-button-two {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .featured-button-three {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 10px 25px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .featured-button:hover {
+            background-color: #ff3814;
+            transform: scale(1.05);
+        }
+        .featured-button-two:hover {
+            background-color: #ff3814;
+            transform: scale(1.05);
+        }
+        .featured-button-three:hover {
+            background-color: #ff3814;
+            transform: scale(1.05);
+        }
+        
+        /* Movie Lists */
+        .movie-list-container {
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .movie-list-title {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+        
+        .movie-list-wrapper {
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .main-list {
+            display: flex;
+            gap: 20px;
+            transition: transform 0.5s ease-in-out;
+            padding: 10px 0;
+        }
+        
+        .movie-list-item {
+            flex: 0 0 auto;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .movie-list-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .img-box {
+            position: relative;
+            width: 100%;
+            height: 270px;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .movie-list-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .movie-list-item:hover .movie-list-item-img {
+            transform: scale(1.1);
+        }
+        
+        .movie-info {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.35s;
+        }
+        
+        .img-box:hover .movie-info {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .movie-list-item-desc {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+       
+        /* Custom Arrow */
+        .arrow {
+            font-size: 40px;
+            color: rgb(184, 181, 181);
+            opacity: 0.9;
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .arrow:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        
+        .arrow-left {
+            left: 10px;
+            right: auto;
+        }
+        
+        /* Popup Styles */
+        .anime-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+        
+        .popup-content {
+            background: #1e1e1e;
+            color: white;
+            border-radius: 10px;
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        
+        .popup-left img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .play-icon:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+        
+        #popupTitle {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        #popupGenreYear {
+            color:white !important;
+            margin-bottom: 15px;
+        }
+        
+        .season-box, .episode-box {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .season-box button, .episode-box button {
+            padding: 6px 12px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .season-box button.active, .episode-box button:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .close-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        .main-footer {
+            background-color: var(--bg-darker);
+            color: var(--text-gray);
+            padding: 30px 0 15px;
+            margin-top: 40px;
+        }
+        
+        .footer-links h4, .footer-social h4 {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links ul li:hover {
+            color: var(--primary-color);
+            cursor: pointer;
+        }
+        
+        .social-icons i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--text-gray);
+            transition: color 0.3s;
+        }
+        
+        .social-icons i:hover {
+            color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            color: #888;
+            margin-top: 20px;
+        }
+        
+        /* Dark/Light Mode */
+      .body.active{
+     background-color: white;
+}
+
+.movie-list-item-desc.active{
+  color: black;
+}
+
+.movie-list-title.active{
+  color: black;
+}
+
+.navbar.active{
+  background-color: white;
+  color: black;
+}
+.toggle.active{
+  background-color: black;
+}
+.toggle-ball.active{
+  background-color: white;
+  transform: translateX(-20px);
+  width: 18px;
+            height: 18px;
+   /* left: 1px ; */
+}
+
+.toggle-icon.active{
+  color: orangered;
+}
+
+.main-footer.active {
+  background-color: #111;
+  color: #ccc;
+  padding: 30px 20px 10px;
+  font-size: 14px;
+}
+
+.search-link.active{
+    color: black;
+}
+.search-link.active:hover{
+    color: var(--primary-color);
+}
+
+/* .footer-container.active {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+} */
+
+/* .footer-links,
+.footer-social {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  color: white;
+  margin-bottom: 10px;
+} */
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .navbar-nav {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .nav-item {
+                margin: 0 5px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .featured-content {
+                height: 50vh;
+            }
+            
+            .feature-title {
+                max-width: 180px;
+            }
+            
+            .feature-desc {
+                font-size: 0.9rem;
+                max-width: 100%;
+                padding: 0 15px;
+            }
+            
+            .featured-button {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .img-box {
+                height: 220px;
+            }
+            
+            .movie-info {
+                padding: 10px;
+                font-size: 0.9rem;
+            }
+            
+            .movie-list-item {
+                width: 160px;
+            }
+            
+            .arrow {
+                font-size: 30px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .featured-content {
+                height: 40vh;
+            }
+            
+            .feature-title {
+                max-width: 150px;
+            }
+            
+            .img-box {
+                height: 180px;
+            }
+            
+            .movie-list-item {
+                width: 140px;
+            }
+            
+            .popup-content {
+                padding: 15px;
+            }
+            
+            .season-box, .episode-box {
+                gap: 5px;
+            }
+            
+            .season-box button, .episode-box button {
+                padding: 5px 8px;
+                font-size: 0.8rem;
+            }
+            
+            .navbar-toggler {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9rem;
+            }
+            .featured-button{
+  /* shrink smoothly with viewport */
+  padding: clamp(6px, 1.6vw, 10px) clamp(12px, 3.2vw, 25px);
+  font-size: clamp(0.85rem, 2.2vw, 1rem);
+}
+
+/* 2) Nice gaps between toggle, search, profile */
+.nav-actions { gap: 10px; }
+@media (min-width: 768px){ .nav-actions { gap: 16px; } }
+@media (min-width: 1200px){ .nav-actions { gap: 20px; } }
+
+/* 3) Popup scales down more aggressively on small screens */
+.anime-popup { padding: 12px; }
+.popup-content{
+  max-width: min(900px, 92vw);
+  width: 100%;
+  max-height: 90vh;
+}
+@media (max-width: 992px){
+  .popup-content{ max-width: 760px; }
+}
+@media (max-width: 768px){
+  .popup-content{ max-width: 640px; }
+  .popup-right, .popup-left{ padding: 12px !important; }
+  #popupTitle{ font-size: 1.4rem; }
+  #popupDescription{ font-size: 0.95rem; }
+}
+@media (max-width: 576px){
+  .popup-content{ max-width: 520px; width: 95vw; }
+  #popupTitle{ font-size: 1.25rem; }
+  #popupDescription{ font-size: 0.9rem; }
+  .play-icon{ font-size: 2.2rem; }
+}
+
+/* 4) Ensure flex gap is respected for the lists */
+.main-list { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="header.html">
+                <h1 class="logo mb-0">Crunchyroll</h1>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="new.html">New</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="popular.html">Popular</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="simulcast.html">Simulcast</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center">
+                    <div class="toggle me-2">
+                        <i class="fa-solid fa-moon toggle-icon"></i>
+                        <i class="fa-solid fa-sun toggle-icon"></i>
+                        <div class="toggle-ball"></div>
+                    </div>
+                    
+                    <a href="search.html" class="search-link me-3">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                    
+                    <div class="dropdown">
+                        <img class="profile-pic dropdown-toggle" src="https://wallpapers.com/images/hd/dr-stone-pictures-sbqnn74m5qqqz0t0.jpg" alt="Profile" id="profileDropdown" data-bs-toggle="dropdown">
+                        
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header">Senku Ishigami</h6></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Switch Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Settings</a></li>
+                            <li><a class="dropdown-item" href="#">Watchlist</a></li>
+                            <li><a class="dropdown-item" href="#">Gift Card</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- Featured Content 1 -->
+        <div class="featured-content featured-content-one rounded position-relative d-flex align-items-end p-4 mb-5">
+            <div class="position-relative z-index-1">
+                <img class="feature-title" src="arise solo.jpeg" alt="Solo Leveling">
+                <p class="feature-desc d-none d-md-block">
+                    "In a world where hunters battle deadly monsters, Sung Jin-Woo starts as the weakest of them all. But when a mysterious power awakens within him, he begins a journey to become the strongest hunter alive..."
+                </p>
+                <button class="featured-button" data-id="1">Watch Now</button>
+            </div>
+        </div>
+
+        <!-- Top Picks for You -->
+        <div class="movie-list-container mb-5">
+            <h2 class="movie-list-title">Top Picks for You</h2>
+            <div class="movie-list-wrapper">
+                <div class="main-list">
+                    <!-- All 8 anime cards for Top Picks -->
+                    <div class="movie-list-item" data-id="3">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ef/6f/0f/ef6f0f1f1ff9a5a86232855f2877efac.jpg" alt="One Piece">
+                            <div class="movie-info">
+                                <h5>One Piece</h5>
+                                <p>5 seasons<br>286 episodes</p>
+                                <p>Genre: Adventure, Shounen</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">One Piece<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="4">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://w0.peakpx.com/wallpaper/1021/130/HD-wallpaper-naruto-anime-kakashi-sakura-sasuke-shonen.jpg" alt="Naruto">
+                            <div class="movie-info">
+                                <h5>Naruto</h5>
+                                <p>9 seasons<br>220 episodes</p>
+                                <p>Genre: Adventure, War</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Naruto<br>Dubbed</p>
+                    </div>
+                    <div class="movie-list-item" data-id="2">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://wallpapers.com/images/hd/demon-slayer-ipad-o6cno2ditosjgcak.jpg" alt="Demon Slayer">
+                            <div class="movie-info">
+                                <h5>Demon Slayer</h5>
+                                <p>6 seasons<br>64 episodes</p>
+                                <p>Genre: Action, Adventure</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Demon Slayer<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="5">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ee/1d/4f/ee1d4f1be2c235032be0c4587c5f4c16.jpg" alt="Dan Da Dan">
+                            <div class="movie-info">
+                                <h5>Dan Da Dan</h5>
+                                <p>2 seasons<br>12 episodes</p>
+                                <p>Genre: Comedy, Horror</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Dan Da Dan<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="6">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://w0.peakpx.com/wallpaper/84/527/HD-wallpaper-dr-stone-anime-iphone-red-samsung-senku.jpg" alt="Dr. Stone">
+                            <div class="movie-info">
+                                <h5>Dr. Stone</h5>
+                                <p>5 seasons<br>72 episodes</p>
+                                <p>Genre: Scientific, Action</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Dr. Stone<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="7">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BMGI0NzU4Y2UtYzQwNS00YzdhLTk4YjctYmM5NTZmMDRlM2JiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="New Saga">
+                            <div class="movie-info">
+                                <h5>New Saga</h5>
+                                <p>1 season<br>2 episodes</p>
+                                <p>Genre: Adventure, Magic</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">New Saga<br>Subtitled</p>
+                    </div>
+                    <div class="movie-list-item" data-id="20">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://i.pinimg.com/736x/1b/93/49/1b934928aea8257e00f2cf6bee855aee.jpg" alt="My Hero Academia">
+                            <div class="movie-info">
+                                <h5>My Hero Academia</h5>
+                                <p>8 seasons<br>169 episodes</p>
+                                <p>Genre: Action, Adventure</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">My Hero Academia<br>Dub|Sub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="34">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://images.justwatch.com/poster/241519432/s166/the-rising-of-the-shield-hero" alt="Shield Hero">
+                            <div class="movie-info">
+                                <h5>Shield Hero</h5>
+                                <p>4 seasons<br>51 episodes</p>
+                                <p>Genre: Adventure, Magic</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Shield Hero<br>Dub|Sub</p>
+                    </div>
+                </div>
+                <i class="fa-regular fa-square-caret-right arrow"></i>
+                <!-- <i class="fa-regular fa-square-caret-left arrow arrow-left"></i> -->
+            </div>
+        </div>
+       <div class="movie-list-container">
+  <h2 class="movie-list-title">New Gen Anime You Must Watch</h2>
+  <div class="movie-list-wrapper">
+    <div class="main-list">
+
+      <div class="movie-list-item" data-id="35">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://4kwallpapers.com/images/wallpapers/kaiju-no-8-poster-5k-5120x7236-19046.jpg" alt="">
+          <div class="movie-info">
+            <h9>Kaiju No. 8</h9>
+            <p>1 season <br> 12 episodes</p>
+            <p>Genre: Action, Sci-Fi</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Kaiju No. 8 <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="36">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BYzM3ZGJkN2YtOTQ5Ny00MzEyLTlkMzQtZDVhYzM3YWFlM2QwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="">
+          <div class="movie-info">
+            <h9>Oshi no Ko</h9>
+            <p>2 seasons <br> 24 episodes</p>
+            <p>Genre: Drama, Supernatural</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Oshi no Ko <br> Sub | Dub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="37">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BZTI4ZGMxN2UtODlkYS00MTBjLWE1YzctYzc3NDViMGI0ZmJmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="">
+          <div class="movie-info">
+            <h9>Frieren: Beyond Journey's End</h9>
+            <p>1 season <br> 28 episodes</p>
+            <p>Genre: Fantasy, Drama</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Frieren <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="38">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://wallpapercg.com/media/ts_orig/20968.webp" alt="">
+          <div class="movie-info">
+            <h9>Mashle: Magic and Muscles</h9>
+            <p>2 seasons <br> 24 episodes</p>
+            <p>Genre: Fantasy, Comedy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Mashle <br> Sub | Dub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="39">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://www.cnet.com/a/img/resize/123bcd4b162f47cb6978cb028364770da7d3d16a/hub/2023/07/07/50bca37c-159c-4055-8f02-291d3bba2df7/zom-100.jpg?auto=webp&fit=crop&height=1200&width=1200" alt="">
+          <div class="movie-info">
+            <h9>Zom 100: Bucket List of the Dead</h9>
+            <p>1 season <br> 12 episodes</p>
+            <p>Genre: Comedy, Horror</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Zom 100 <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="40">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://resizing.flixster.com/5_1YujrM61psVrT88QxQIRDxVf4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vNmVkZWRiMmYtZjNhMS00NGMyLWI2NDAtYmNlMzU2MGFiMGMwLnBuZw==" alt="">
+          <div class="movie-info">
+            <h9>Hell's Paradise</h9>
+            <p>1 season <br> 13 episodes</p>
+            <p>Genre: Action, Dark Fantasy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Hell's Paradise <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="41">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/I/81uAmocNBtL.jpg" alt="">
+          <div class="movie-info">
+            <h9>Spy x Family</h9>
+            <p>2 seasons <br> 38 episodes</p>
+            <p>Genre: Comedy, Action</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Spy x Family <br> Sub | Dub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="42">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://cdn.hmv.com/r/w-640/hmv/files/02/02b4caf0-6bf5-4a41-be07-7c9448ab1f63.jpg" alt="">
+          <div class="movie-info">
+            <h9>Jobless Reincarnation</h9>
+            <p>2 seasons <br> 47 episodes</p>
+            <p>Genre: Isekai, Fantasy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Mushoku Tensei <br> Sub | Dub</p>
+      </div>
+
+    </div>
+    <i class="fa-regular fa-square-caret-right arrow"></i>
+  </div>
+</div>
+
+
+        <div class="movie-list-container mb-5">
+  <h2 class="movie-list-title">Top Horror picks for you</h2>
+  <div class="movie-list-wrapper">
+    <div class="main-list">
+
+      <!-- Death Note -->
+      <div class="movie-list-item" data-id="11">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://static.posters.cz/image/750/death-note-from-the-shadows-i58005.jpg" alt="Death Note">
+          <div class="movie-info">
+            <h5>Death Note</h5>
+            <p>1 season<br>37 episodes</p>
+            <p>Genre: Thriller, Supernatural</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Death Note<br>Subtitled</p>
+      </div>
+
+      <!-- Black Butler -->
+      <div class="movie-list-item" data-id="10">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/I/81H3COSBQ5L.jpg" alt="Black Butler">
+          <div class="movie-info">
+            <h5>Black Butler</h5>
+            <p>7 seasons<br>78 episodes</p>
+            <p>Genre: Fantasy, Adventure</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Black Butler<br>Sub|Dub</p>
+      </div>
+
+      <!-- The Promised Neverland -->
+      <div class="movie-list-item" data-id="30">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/93/54/e7/9354e75ebdf6821b00a64d70fe9f8d0c.jpg" alt="The Promised Neverland">
+          <div class="movie-info">
+            <h5>The Promised Neverland</h5>
+            <p>2 seasons<br>23 episodes</p>
+            <p>Genre: Thriller, Mystery, Horror, Sci-Fi</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">The Promised Neverland<br>Subtitled</p>
+      </div>
+
+      <!-- Attack on Titan -->
+      <div class="movie-list-item" data-id="21">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/474x/96/50/ff/9650ff654f66241448b9733f4a12dc85.jpg" alt="Attack on Titan">
+          <div class="movie-info">
+            <h5>Attack on Titan</h5>
+            <p>4 seasons<br>89 episodes</p>
+            <p>Genre: Action, Drama, Dark Fantasy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Attack on Titan<br>Dub|Sub</p>
+      </div>
+
+      <!-- JUJUTSU KAISEN -->
+      <div class="movie-list-item" data-id="13">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ac/43/52/ac4352f877cd4265d69538bd7532b7b3.jpg" alt="JUJUTSU KAISEN">
+          <div class="movie-info">
+            <h5>JUJUTSU KAISEN</h5>
+            <p>3 seasons<br>48 episodes</p>
+            <p>Genre: Action, Horror</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">JUJUTSU KAISEN<br>Sub|Dub</p>
+      </div>
+
+      <!-- Chainsaw Man -->
+      <div class="movie-list-item" data-id="32">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://resizing.flixster.com/b_iMzsB6inR_e8s0Wl1_JI1OSi4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZWFzb24vMDBmODc2YTEtY2Y5Ny00NWJkLTliMTEtMTY3NjE5MWIyM2ZlLnBuZw==" alt="Chainsaw Man">
+          <div class="movie-info">
+            <h5>Chainsaw Man</h5>
+            <p>1 season<br>12 episodes</p>
+            <p>Genre: Action, Horror, Supernatural</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Chainsaw Man<br>Dub|Sub</p>
+      </div>
+
+      <!-- One Punch Man -->
+      <div class="movie-list-item" data-id="23">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://images-cdn.ubuy.co.in/6749d637c53fd406cc3bb54c-one-punch-man-destruction-maxi-poster.jpg" alt="One Punch Man">
+          <div class="movie-info">
+            <h5>One Punch Man</h5>
+            <p>2 seasons<br>24 episodes</p>
+            <p>Genre: Action, Comedy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">One Punch Man<br>Dub|Sub</p>
+      </div>
+
+      <!-- Bleach -->
+      <div class="movie-list-item" data-id="17">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/8b/3e/9c/8b3e9c7953d6cdc568b288bdf25b4f10.jpg" alt="Bleach">
+          <div class="movie-info">
+            <h5>Bleach</h5>
+            <p>16 seasons<br>366 episodes + TYBW</p>
+            <p>Genre: Action, Supernatural, Shounen</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Bleach<br>Subtitled</p>
+      </div>
+
+    </div>
+
+    <!-- Arrows -->
+    <i class="fa-regular fa-square-caret-right arrow"></i>
+    <!-- <i class="fa-regular fa-square-caret-left arrow arrow-left"></i> -->
+  </div>
+</div>
+
+<div class="movie-list-container mb-5">
+  <h2 class="movie-list-title">Sports Picks for You</h2>
+  <div class="movie-list-wrapper">
+    <div class="main-list">
+      
+      <div class="movie-list-item" data-id="31">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/cd/ea/09/cdea09a54c643fc5ecac0d5d996ee3ee.jpg" alt="Megalo Box">
+          <div class="movie-info">
+            <h5>Megalo Box</h5>
+            <p>2 seasons<br>26 episodes</p>
+            <p>Genre: Action, Sports, Drama</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Megalo Box<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="27">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/6c/b0/97/6cb097f36fb8438fca2a5ad3c456687c.jpg" alt="Slam Dunk">
+          <div class="movie-info">
+            <h5>Slam Dunk</h5>
+            <p>1 season<br>101 episodes</p>
+            <p>Genre: Sports, Basketball</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Slam Dunk<br>Subtitled</p>
+      </div>
+
+      <div class="movie-list-item" data-id="26">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ea/e0/cf/eae0cfb8d0872e5199443cc5a88be73a.jpg" alt="Hajime no Ippo">
+          <div class="movie-info">
+            <h5>Hajime no Ippo</h5>
+            <p>3 seasons<br>127 episodes</p>
+            <p>Genre: Sports, Boxing</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Hajime no Ippo<br>Subtitled</p>
+      </div>
+
+      <div class="movie-list-item" data-id="25">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://images.justwatch.com/poster/306783512/s718/season-2.jpg" alt="Baki">
+          <div class="movie-info">
+            <h5>Baki</h5>
+            <p>5 parts<br>48+ episodes</p>
+            <p>Genre: Martial Arts, Action</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Baki<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="24">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfXbiXggYGMMZctkfZ9r7zgE0PspF2O9gzA&s" alt="Blue Lock">
+          <div class="movie-info">
+            <h5>Blue Lock</h5>
+            <p>2 seasons<br>24+ episodes</p>
+            <p>Genre: Sports, Psychological</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Blue Lock<br>Subtitled</p>
+      </div>
+
+      <div class="movie-list-item" data-id="28">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.redd.it/mf-ghost-phone-wallpapers-from-the-official-website-v0-ans8md37rapc1.png?width=1625&format=png&auto=webp&s=66a9162948c5c265d0f9de565b010aac217561fe" alt="MF Ghost">
+          <div class="movie-info">
+            <h5>MF Ghost</h5>
+            <p>1 season<br>12 episodes</p>
+            <p>Genre: Sports, Racing</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">MF Ghost<br>Subtitled</p>
+      </div>
+
+      <div class="movie-list-item" data-id="29">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BNjc4NGQxY2ItZTE2NC00M2U4LTk4OTUtZTcxNjVlMDVjZDk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="God's Games We Play">
+          <div class="movie-info">
+            <h5>God's Games We Play</h5>
+            <p>1 season<br>12 episodes</p>
+            <p>Genre: Fantasy, Games</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">God's Games We Play<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="14">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpe7ohW4xzDyg3D-sOpgq9Vu_nRqqEYCOcvw&s" alt="Haikyu!!">
+          <div class="movie-info">
+            <h5>Haikyu!!</h5>
+            <p>4 seasons<br>86 episodes</p>
+            <p>Genre: Sports, Adventure</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Haikyu!!<br>Sub | Dub</p>
+      </div>
+    </div>
+    <i class="fa-regular fa-square-caret-right arrow"></i>
+    <!-- <i class="fa-regular fa-square-caret-left arrow arrow-left"></i> -->
+  </div>
+</div>
+
+
+        <!-- Featured Content 2 -->
+        <div class="featured-content featured-content-two rounded position-relative d-flex align-items-end p-4 mb-5">
+            <div class="position-relative z-index-1">
+                <img class="feature-title" src="https://i.pinimg.com/474x/8b/1d/76/8b1d769aa897121f4b5b1b830a417d0b.jpg" alt="Tokyo Revengers">
+                <p class="feature-desc d-none d-md-block">
+                    "When time rewinds, revenge ignites. After losing everything, Takemichi gains a second chance—to dive into the past, infiltrate Tokyo's most dangerous gang, and save the future of the one he loves."
+                </p>
+                <button class="featured-button-two" data-id="8">Watch Now</button>
+            </div>
+        </div>
+
+        <!-- Popular Near You -->
+        <div class="movie-list-container mb-5">
+            <h2 class="movie-list-title">Popular Near You</h2>
+            <div class="movie-list-wrapper">
+                <div class="main-list">
+                    <!-- All 8 anime cards for Popular Near You -->
+                    <div class="movie-list-item" data-id="9">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcJSfB7RetRISlRcRdxhgqLVYIaH4rjFuipQ&s" alt="Black Clover">
+                            <div class="movie-info">
+                                <h5>Black Clover</h5>
+                                <p>1 season<br>171 episodes</p>
+                                <p>Genre: Magic, Adventure</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Black Clover<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="14">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpe7ohW4xzDyg3D-sOpgq9Vu_nRqqEYCOcvw&s" alt="Haikyu!!">
+                            <div class="movie-info">
+                                <h5>Haikyu!!</h5>
+                                <p>4 seasons<br>86 episodes</p>
+                                <p>Genre: Sports, Adventure</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Haikyu!!<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="22">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://images-cdn.ubuy.co.in/6353ac79771f1e13e575aa04-trends-international-x-hunter-book-key.jpg" alt="Hunter x Hunter">
+                            <div class="movie-info">
+                                <h5>Hunter x Hunter</h5>
+                                <p>6 seasons<br>148 episodes</p>
+                                <p>Genre: Adventure, Shounen</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Hunter x Hunter<br>Dub|Sub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="13">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ac/43/52/ac4352f877cd4265d69538bd7532b7b3.jpg" alt="Jujutsu Kaisen">
+                            <div class="movie-info">
+                                <h5>Jujutsu Kaisen</h5>
+                                <p>3 seasons<br>48 episodes</p>
+                                <p>Genre: Action, Horror</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Jujutsu Kaisen<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="19">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BODUwZGFlOTQtMWVjOS00N2Q2LWJmOGItOWM1NmQ4ODY2NTZiXkEyXkFqcGc@._V1_.jpg" alt="Immortal King">
+                            <div class="movie-info">
+                                <h5>Immortal King</h5>
+                                <p>4 seasons<br>51 episodes</p>
+                                <p>Genre: Love, Action</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Immortal King<br>Sub|Dub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="15">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://i.pinimg.com/736x/b5/c8/17/b5c817f77fac5fdea158d190da7fbbc1.jpg" alt="Wind Breaker">
+                            <div class="movie-info">
+                                <h5>Wind Breaker</h5>
+                                <p>2 seasons<br>25 episodes</p>
+                                <p>Genre: Action, School</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Wind Breaker<br>Dub|Sub</p>
+                    </div>
+                    <div class="movie-list-item" data-id="16">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScw4QWeCsEqIjt312Y3UrzePEFaANRUcAvlg&s" alt="Gachiakuta">
+                            <div class="movie-info">
+                                <h5>Gachiakuta</h5>
+                                <p>1 season<br>2 episodes</p>
+                                <p>Genre: Horror, Adventure</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Gachiakuta<br>Subtitled</p>
+                    </div>
+                    <div class="movie-list-item" data-id="18">
+                        <div class="img-box">
+                            <img class="movie-list-item-img" src="https://a.storyblok.com/f/178900/1280x1809/86e02165a2/the-shiunji-family-children-teaser-visual.jpg/m/filters:quality(95)format(webp)" alt="Shiunji Family">
+                            <div class="movie-info">
+                                <h5>Shiunji Family</h5>
+                                <p>1 season<br>12 episodes</p>
+                                <p>Genre: Love, School</p>
+                            </div>
+                        </div>
+                        <p class="movie-list-item-desc mt-2">Shiunji Family<br>Dub|Sub</p>
+                    </div>
+                </div>
+                <i class="fa-regular fa-square-caret-right arrow"></i>
+                <!-- <i class="fa-regular fa-square-caret-left arrow arrow-left"></i> -->
+            </div>
+        </div>
+<div class="movie-list-container mb-5">
+  <h2 class="movie-list-title">Tamil Dubbed for You</h2>
+  <div class="movie-list-wrapper">
+    <div class="main-list">
+
+      <div class="movie-list-item" data-id="29">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BNjc4NGQxY2ItZTE2NC00M2U4LTk4OTUtZTcxNjVlMDVjZDk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="God's Games We Play">
+          <div class="movie-info">
+            <h5>God's Games We Play</h5>
+            <p>1 season<br>12 episodes</p>
+            <p>Genre: Fantasy, Games</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">God's Games We Play<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="24">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDfXbiXggYGMMZctkfZ9r7zgE0PspF2O9gzA&s" alt="Blue Lock">
+          <div class="movie-info">
+            <h5>Blue Lock</h5>
+            <p>2 seasons<br>24+ episodes</p>
+            <p>Genre: Sports, Psychological</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Blue Lock<br>Subtitled</p>
+      </div>
+
+      <div class="movie-list-item" data-id="33">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://imgc.allpostersimages.com/img/posters/dragon-ball-z-saiyans_u-L-FAENZV0.jpg" alt="Dragon Ball Z">
+          <div class="movie-info">
+            <h5>Dragon Ball Z</h5>
+            <p>9 seasons<br>291 episodes</p>
+            <p>Genre: Action, Martial Arts</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Dragon Ball Z<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="20">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/1b/93/49/1b934928aea8257e00f2cf6bee855aee.jpg" alt="My Hero Academia">
+          <div class="movie-info">
+            <h5>My Hero Academia</h5>
+            <p>8 seasons<br>169 episodes</p>
+            <p>Genre: Action, Adventure</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">My Hero Academia<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="15">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/b5/c8/17/b5c817f77fac5fdea158d190da7fbbc1.jpg" alt="WIND BREAKER">
+          <div class="movie-info">
+            <h5>WIND BREAKER</h5>
+            <p>2 seasons<br>25 episodes</p>
+            <p>Genre: Action, Adventure, School</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">WIND BREAKER<br>Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="2">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://wallpapers.com/images/hd/demon-slayer-ipad-o6cno2ditosjgcak.jpg" alt="Demon Slayer">
+          <div class="movie-info">
+            <h5>Demon Slayer: Kimetsu no Yaiba</h5>
+            <p>6 seasons<br>64 episodes</p>
+            <p>Genre: Action, Adventure</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Demon Slayer<br>Sub | Dub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="6">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://w0.peakpx.com/wallpaper/84/527/HD-wallpaper-dr-stone-anime-iphone-red-samsung-senku.jpg" alt="Dr. Stone">
+          <div class="movie-info">
+            <h5>Dr. Stone</h5>
+            <p>5 seasons<br>72 episodes</p>
+            <p>Genre: Scientific, Action, Adventure</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Dr. Stone<br>Sub | Dub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="13">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ac/43/52/ac4352f877cd4265d69538bd7532b7b3.jpg" alt="Jujutsu Kaisen">
+          <div class="movie-info">
+            <h5>JUJUTSU KAISEN</h5>
+            <p>3 seasons<br>48 episodes</p>
+            <p>Genre: Action, Horror</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">JUJUTSU KAISEN<br>Sub | Dub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="12">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/I/81Z-WeVM-sS.jpg" alt="Dragon Ball Super">
+          <div class="movie-info">
+            <h5>Dragon Ball Super</h5>
+            <p>3 seasons<br>108 episodes</p>
+            <p>Genre: Martial Arts, Sci-Fi</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc mt-2">Dragon Ball Super<br>Sub | Dub</p>
+      </div>
+      
+    </div>
+
+    
+    <i class="fa-regular fa-square-caret-right arrow"></i>
+    <!-- <i class="fa-regular fa-square-caret-left arrow arrow-left"></i> -->
+  </div>
+</div>
+
+<div class="movie-list-container">
+  <h2 class="movie-list-title">Fantasy & Supernatural Picks</h2>
+  <div class="movie-list-wrapper">
+    <div class="main-list">
+
+      <div class="movie-list-item" data-id="16">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScw4QWeCsEqIjt312Y3UrzePEFaANRUcAvlg&s" alt="">
+          <div class="movie-info">
+            <h9>Gachiakuta</h9>
+            <p>1 season <br> 12 episodes</p>
+            <p>Genre: Fantasy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Gachiakuta <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="7">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BMGI0NzU4Y2UtYzQwNS00YzdhLTk4YjctYmM5NTZmMDRlM2JiXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="">
+          <div class="movie-info">
+            <h9>New Saga</h9>
+            <p>1 season <br> 12 episodes</p>
+            <p>Genre: Fantasy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">New Saga <br> Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="29">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BNjc4NGQxY2ItZTE2NC00M2U4LTk4OTUtZTcxNjVlMDVjZDk0XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="">
+          <div class="movie-info">
+            <h9>God's Game We Play</h9>
+            <p>1 season <br> 12 episodes</p>
+            <p>Genre: Fantasy, Games</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">God's Game We Play <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="19">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://m.media-amazon.com/images/M/MV5BODUwZGFlOTQtMWVjOS00N2Q2LWJmOGItOWM1NmQ4ODY2NTZiXkEyXkFqcGc@._V1_.jpg" alt="">
+          <div class="movie-info">
+            <h9>Immortal King</h9>
+            <p>3 seasons <br> 39 episodes</p>
+            <p>Genre: Fantasy, Comedy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Immortal King <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="34">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://images.justwatch.com/poster/241519432/s166/the-rising-of-the-shield-hero" alt="">
+          <div class="movie-info">
+            <h9>Shield Hero</h9>
+            <p>3 seasons <br> 50 episodes</p>
+            <p>Genre: Adventure, Magic</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Shield Hero <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="9">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcJSfB7RetRISlRcRdxhgqLVYIaH4rjFuipQ&s" alt="">
+          <div class="movie-info">
+            <h9>Black Clover</h9>
+            <p>1 season <br> 170 episodes</p>
+            <p>Genre: Fantasy</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Black Clover <br> Dub | Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="17">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/8b/3e/9c/8b3e9c7953d6cdc568b288bdf25b4f10.jpg" alt="">
+          <div class="movie-info">
+            <h9>Bleach</h9>
+            <p>3 seasons <br> 405 episodes</p>
+            <p>Genre: Supernatural</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Bleach <br> Sub</p>
+      </div>
+
+      <div class="movie-list-item" data-id="13">
+        <div class="img-box">
+          <img class="movie-list-item-img" src="https://i.pinimg.com/736x/ac/43/52/ac4352f877cd4265d69538bd7532b7b3.jpg" alt="">
+          <div class="movie-info">
+            <h9>Jujutsu Kaisen</h9>
+            <p>2 seasons <br> 47 episodes</p>
+            <p>Genre: Supernatural</p>
+          </div>
+        </div>
+        <p class="movie-list-item-desc">Jujutsu Kaisen <br> Dub | Sub</p>
+      </div>
+
+    </div>
+    <i class="fa-regular fa-square-caret-right arrow"></i>
+  </div>
+</div>
+
+        <!-- Additional sections would follow the same pattern -->
+        <!-- For brevity, I'm showing just two sections but all would be included -->
+
+        <!-- Featured Content 3 -->
+        <div class="featured-content featured-content-three rounded position-relative d-flex align-items-start p-4 mb-5">
+            <div class="position-relative z-index- text-center w-100">
+                <img class="feature-title-three mx-auto" src="https://i.pinimg.com/originals/bd/6f/b1/bd6fb15dcf194a9fe8e4b9a4ee8eb7fd.jpg" alt="Demon Slayer" style="max-width: 300px;">
+                <button class="featured-button-three mt-3" data-id="2">Watch Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Anime Popup -->
+    <div class="anime-popup" id="animePopup">
+        <div class="popup-content position-relative">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 p-4">
+                        <div class="popup-left position-relative">
+                            <img id="popupImage" src="" alt="Anime Image" class="w-100">
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 p-4">
+                        <div class="popup-right">
+                            <i class="fas fa-times close-btn" id="closePopup"></i>
+                            <h2 id="popupTitle"></h2>
+                            <p id="popupGenreYear" class="text-muted"></p>
+                            <p id="popupDescription"></p>
+                            <div id="seasonBox" class="season-box"></div>
+                            <div id="episodeBox" class="episode-box mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="footer-links">
+                        <h4>Crunchyroll</h4>
+                        <ul>
+                            <li><p>About</p></li>
+                            <li><p>Help Center</p></li>
+                            <li><p>Terms & Conditions</p></li>
+                            <li><p>Redeem Gift Card</p></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="footer-social">
+                        <h4>Connect With Us</h4>
+                        <div class="social-icons mt-3">
+                            <i class="fab fa-youtube me-3"></i>
+                            <i class="fab fa-instagram me-3"></i>
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright text-center">
+                &copy; 2025 Crunchyroll. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap & jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+ <script>
+// ---------------------
+// SLIDER (per-row, step-by-one, extra click then reset)
+// ---------------------
+document.querySelectorAll(".movie-list-container").forEach(container => {
+  const wrapper = container.querySelector(".movie-list-wrapper");
+  const list = container.querySelector(".main-list");
+  const items = Array.from(list.querySelectorAll(".movie-list-item"));
+  const btnRight = container.querySelector(".arrow:not(.arrow-left)");
+  const btnLeft  = container.querySelector(".arrow-left");
+
+  let offset = 0;
+
+  function getStep() {
+    const first = list.querySelector(".movie-list-item");
+    if (!first) return 0;
+    const style = getComputedStyle(list);
+    const gap = parseFloat(style.columnGap || style.gap || 20);
+    return first.offsetWidth + gap; // move 1 card per click
+  }
+
+  function getMaxOffset() {
+    const step = getStep();
+    const visible = Math.max(1, Math.floor(wrapper.offsetWidth / step));
+    const extra = items.length - visible; // how many hidden to the right
+    return extra > 0 ? extra * step : 0;
+  }
+
+  function render() {
+    list.style.transform = `translateX(${-offset}px)`;
+  }
+
+ function moveRight() {
+  const step = getStep();
+  const max = getMaxOffset();
+
+  offset += step;  // move one card
+
+  // if offset reaches or exceeds max, reset to start
+  if (offset >= max) {
+    offset = 0; // go back to first card
+  }
+
+  render();
+}
+
+  function moveLeft() {
+    const step = getStep();
+    const max = getMaxOffset();
+    offset += step;
+
+    if (offset >= max) {
+      offset = 0;
+    }
+    render();
+  }
+
+  btnRight && btnRight.addEventListener("click", e => { e.stopPropagation(); moveRight(); });
+  btnLeft  && btnLeft.addEventListener("click",  e => { e.stopPropagation(); moveLeft();  });
+
+  window.addEventListener("resize", () => {
+    const max = getMaxOffset();
+    if (offset > max) {
+      offset = max;
+      render();
+    }
+  });
+});
+
+// ---------------------
+// DARK/LIGHT TOGGLE (as-is)
+// ---------------------
+const ball = document.querySelector(".toggle-ball");
+const toggle = document.querySelector(".toggle");
+const icon = document.querySelector(".toggle-icon");
+
+const items = document.querySelectorAll(
+  "body, .movie-list-item-desc, .movie-list-title, .navbar-container, .search-link, .mainfooter, .navbar"
+);
+
+ball.addEventListener("click", () => {
+  // toggle theme classes
+  items.forEach(item => item.classList.toggle("active"));
+
+  // toggle ball and toggle
+  ball.classList.toggle("active");
+  toggle.classList.toggle("active");
+
+  // optional icon
+  if (icon) icon.classList.toggle("active");
+});
+
+
+// ---------------------
+// PROFILE POPUP (guarded so it won't error)
+// ---------------------
+const profilePic = document.querySelector(".profile-pic");
+const profilePopup = document.querySelector(".profile-popup");
+if (profilePic && profilePopup) {
+  profilePic.addEventListener("click", () => {
+    profilePopup.classList.toggle("show");
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".profile-container")) {
+      profilePopup.classList.remove("show");
+    }
+  });
+}
+
+// ---------------------
+// POPUP + JSON (supports TWO JSON sources, merged by id)
+// ---------------------
+const animePopup = document.getElementById("animePopup");
+const popupImage = document.getElementById("popupImage");
+const popupTitle = document.getElementById("popupTitle");
+const popupGenreYear = document.getElementById("popupGenreYear");
+const popupDescription = document.getElementById("popupDescription");
+const seasonBox = document.getElementById("seasonBox");
+const episodeBox = document.getElementById("episodeBox");
+const closePopup = document.getElementById("closePopup");
+
+let animeList=[];
+
+fetch("briefanime.json")
+ .then(res => res.json())
+ .then(data =>{
+  animeList=data;
+  setupClickEvents();
+  setupFeaturedButtons();
+ });
+
+ function setupClickEvents(){
+  const items=document.querySelectorAll(".movie-list-item");
+  items.forEach(item=>{
+    item.addEventListener("click",()=>{
+      const id=item.getAttribute("data-id");
+      const anime=animeList.find(a => a.id == id);
+      if(anime)openPopup(anime);
+      
+    });
+  });
+ }
+
+ function setupFeaturedButtons() {
+  const featuredButton = document.querySelector(".featured-button");
+  if (featuredButton) {
+    featuredButton.addEventListener("click", () => {
+      const anime = animeList.find((a) => a.id == 1);
+      if (anime) openPopup(anime);
+    });
+  }
+
+  const featuredButtontwo = document.querySelector(".featured-button-two");
+  if (featuredButtontwo) {
+    featuredButtontwo.addEventListener("click", () => {
+      const anime = animeList.find((a) => a.id == 8);
+      if (anime) openPopup(anime);
+    });
+  }
+
+  const featuredButtonthree = document.querySelector(".featured-button-three");
+  if (featuredButtonthree) {
+    featuredButtonthree.addEventListener("click", () => {
+      const anime = animeList.find((a) => a.id == 2);
+      if (anime) openPopup(anime);
+    });
+  }
+}
+// Function to open popup with anime data
+function openPopup(anime) {
+  popupImage.src = anime.image;
+  popupTitle.textContent = anime.name || anime.title;  // ✅ this was missing before
+  popupGenreYear.textContent = `${anime.genre} • ${anime.year}`;
+  popupDescription.textContent = anime.description;
+
+  // Clear old season + episode buttons
+  seasonBox.innerHTML = "";
+  episodeBox.innerHTML = "";
+
+  if (anime.seasons && anime.seasons.length > 0) {
+    anime.seasons.forEach((seasonObj, index) => {
+      const seasonBtn = document.createElement("button");
+      seasonBtn.textContent = `Season ${seasonObj.season}`;
+      seasonBtn.classList.add("season-btn");
+
+      // Default active season
+      if (index === 0) {
+        seasonBtn.classList.add("active");
+        loadEpisodes(seasonObj.episodes);
+      }
+
+      seasonBtn.addEventListener("click", () => {
+        seasonBox.querySelectorAll("button").forEach(btn => btn.classList.remove("active"));
+        seasonBtn.classList.add("active");
+        loadEpisodes(seasonObj.episodes);
+      });
+
+      seasonBox.appendChild(seasonBtn);
+    });
+  }
+
+  animePopup.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function loadEpisodes(count) {
+  episodeBox.innerHTML = "";
+  for (let i = 1; i <= count; i++) {
+    const epBtn = document.createElement("button");
+    epBtn.textContent = `Ep ${i}`;
+    episodeBox.appendChild(epBtn);
+  }
+}
+
+// Close popup
+closePopup.addEventListener("click", () => {
+  animePopup.style.display = "none";
+  document.body.style.overflow = "auto";
+});
+</script>
+
+</body>
+</html>
