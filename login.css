@@ -87,7 +87,7 @@ body{
 
 #chidori{
     top: 120px;
-    right: 600px;
+    right: 650px;
     width: 370px;
     animation: chidori-glow 1.5s infinite;
 }
@@ -95,7 +95,7 @@ body{
 #rasengon{
     top: 200px;
     color: blue;
-    left: 680px;
+    left: 730px;
     width: 150px;
     animation: spin 1s linear infinite, pulse 2s ease-in-out infinite;
     filter: drop-shadow(0 0 70px #00faff);
@@ -222,7 +222,7 @@ body{
     .login-container {
         width: 100%;
         max-width: 400px;
-        /* left: 100px;x */
+        left: 100px; 
         height: auto;
         padding: 20px;
         margin: 20px;
